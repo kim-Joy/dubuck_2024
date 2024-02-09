@@ -1,0 +1,145 @@
+@charset "UTF-8";
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: inset(50%);
+  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.none_scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* height */
+.h-50 {
+  height: 50px;
+}
+.h-40 {
+  height: 40px;
+}
+.h-20 {
+  height: 20px;
+}
+
+/* border-radius */
+.radius {
+  border-radius: 100%;
+}
+.radius-5 {
+  border-radius: 5px;
+}
+.radius-20 {
+  border-radius: 20px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+/* Button
+===================================== */
+.Btn {
+  display: block;
+  /* size */
+  /* bg-color: */
+}
+.Btn.full {
+  width: 100%;
+}
+.Btn.paint.orange {
+  background-color: #FA7D38;
+}
+.Btn.paint.gray-f1 {
+  background-color: #F1F1F1;
+}
+.Btn.paint.gray-e2 {
+  background-color: #E2E2E2;
+}
+.Btn.paint.white {
+  background-color: #FFFFFF;
+}
+.Btn.border {
+  border-width: 1px;
+  border-style: solid;
+}
+.Btn.border.border-orange {
+  border-color: #FA7D38;
+}
+.Btn.border.border-8a {
+  border-color: #8A8A8A;
+}
+.Btn.border.border-whtie {
+  border-color: #FFFFFF;
+}
+
+/* txt btn */
+.Btn .txt.orange {
+  color: #FA7D38;
+}
+.Btn .txt.grape-deep {
+  color: #3F34C0;
+}
+.Btn .txt.graye-68 {
+  color: #686868;
+}
+.Btn .txt.gtay-8a {
+  color: #8A8A8A;
+}
+.Btn .txt.white {
+  color: #FFFFFF;
+}
+
+/* icon btn */
+.Btn.icon {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.Btn.icon > i {
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+}
+.Btn.icon > i.arrow {
+  -webkit-mask-image: url("../../assets/images/icon/arrow.svg");
+  mask-image: url("../../assets/images/icon/arrow.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-repeat: no-repeat;
+  -webkit-mask-size: 16px 10px;
+  mask-size: 16px 10px;
+  background-size: 16px 10px;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  background-position: center center;
+}
+.Btn.icon > .txt {
+  width: calc(100% - 40px);
+}
+.Btn.icon.orange .arrow {
+  background-color: #FFFFFF;
+}
+.Btn.icon.white .arrow {
+  background-color: #FA7D38;
+}
+
+/* 2개 이상인 버튼 */
+.Buttons {
+  position: relative;
+  margin-top: 40px;
+}
+.Buttons .Btn {
+  margin-top: 8px;
+}
+.Buttons.horizontal {
+  display: flex;
+  flex-wrap: nowrap;
+}

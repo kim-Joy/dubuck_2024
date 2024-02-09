@@ -1,0 +1,13 @@
+@import "var.scss";
+
+.Intro {
+  font: {
+    family: $font_kr;
+    size: 14px;
+    weight: 300;
+  }  
+    color: $black;
+  .buttons {
+    margin-top: 90px;
+  }
+}

@@ -1,0 +1,25 @@
+@mixin font-face($name, $path, $exts: woff2 woff ttf, $weight: null, $style: normal, $display: block) {
+  $src: null;
+  $formats: (
+    woff2: 'woff2',
+    woff: 'woff',
+    ttf: 'truetype'
+  );
+  @each $ext in $exts {
+    $format: map-get($formats, $ext);
+    $src: append($src, url(quote($path)) format(quote($format)), comma);
+  }
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@include font-face(
+  "KIMM",
+  "url('./assets/font/KIMM_Light.woff2') format('woff2')",
+  300,
+  woff2
+);

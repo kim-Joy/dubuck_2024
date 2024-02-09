@@ -1,0 +1,116 @@
+@import "var.scss";
+
+
+/* Button
+===================================== */
+
+.Btn {
+  display: block;
+  /* size */
+  &.full {
+    width: 100%; 
+  }
+
+  /* bg-color: */
+  &.paint{
+    &.orange {
+      background-color: $orange;
+    }
+    &.gray-f1 {
+      background-color: $gray_f1;
+    }
+    &.gray-e2 {
+      background-color: $gray_e2;
+    }
+    &.white {
+      background-color: $white;
+    }
+  }
+  &.border{
+    border-width: 1px;
+    border-style: solid;
+    &.border-orange {
+      border-color: $orange;
+    }
+      
+    &.border-8a {
+      border-color: $gray_8a;
+    }
+    &.border-whtie {
+      border-color: $white;
+    }
+  }
+}
+
+/* txt btn */
+.Btn {
+  .txt {
+    &.orange {
+      color: $orange; 
+    }
+    &.grape-deep {
+      color: $grape_deep;
+    }
+    &.graye-68{
+    color: $gray_68;
+    }
+    &.gtay-8a{
+      color: $gray_8a;
+    }
+    &.white {
+      color: $white;
+    }
+  }
+}
+/* icon btn */
+.Btn {
+  &.icon {
+    padding: 0 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+    > i {
+      display: inline-block;
+      width: 30px; height: 100%;
+      &.arrow {
+        -webkit-mask-image: url($url + "icon/arrow.svg");
+        mask-image: url($url + "icon/arrow.svg");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        background-repeat: no-repeat;
+        -webkit-mask-size: 16px 10px;
+        mask-size: 16px 10px;
+        background-size: 16px 10px;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+        background-position: center center;
+      }
+    }
+    > .txt {width: calc(100% - 40px); }
+    &.orange {
+      .arrow {
+        background-color: $white;
+      }
+    }
+    &.white {
+      .arrow {
+        background-color: $orange;
+      }
+    }
+  }
+}
+
+
+/* 2개 이상인 버튼 */
+.Buttons {
+  position: relative; 
+  margin-top: 40px;
+   .Btn {
+    margin-top: 8px;
+  }
+  &.horizontal {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

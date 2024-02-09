@@ -1,0 +1,42 @@
+@import "var.scss";
+
+
+
+.Big {
+  & .group {
+    max-height: 300px;
+    padding: 62px 30px 123px 60px;
+    box-sizing: border-box;
+    border-radius: 80px;
+    border-bottom-right-radius: 0;
+    background-color: $orange;
+    
+    .dubuck_logo {
+      width: 62px; height: 50px;
+      background: {
+        image: url($url + "common/logo.png");
+        size: contain;
+        position: center center;
+        repeat: no-repeat;
+      }
+    }
+    h2 {
+      color: $black;
+      font: {
+        size: 40px; 
+        weight: 700;
+      } 
+    }
+    p {
+      margin-top: 8px;
+      color: $black;
+      font: {
+        size: 16px;  
+    }}
+  }
+  .dubuck_symbolon {
+    max-width: 100%;
+    margin-top: -54px; 
+    padding-left: 47px; 
+  }
+}
