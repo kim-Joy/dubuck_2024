@@ -1,11 +1,32 @@
-function Header() {
+ 
+import { useNavigate } from 'react-router-dom';
+
+function HeaderTitle(props) {
+  const navigate = useNavigate();  
+
+  const handleBack = () => {
+    navigate(-1); 
+  }; 
+
   return (
-    <div className="Header">
-      header
-    </div>
+    <header className="Header">
+      <button 
+        className="hd-back"
+        onClick={handleBack}
+      >
+        <span className="visuallyhidden">뒤로가기</span>
+      </button>
+      <h2>{props.title}</h2>
+    </header>
   );
 }
 
-export default Header;
+function Header(){
+  return(
+    <header className="Header">
+      <h1>Logo</h1>
+    </header>
+  )
+}
 
-/* PAGES 폴더는 라우터 시킬 */
+export {Header, HeaderTitle} ;

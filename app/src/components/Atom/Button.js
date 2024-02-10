@@ -2,21 +2,28 @@
 import PropTypes from "prop-types";
 import "../../styles/scss/atomic.scss";
 
-function Button({btnClass, handleClick, txtClass, text, icon}) {
+const ButtonIcon = (props) => {
   return (
-    <button className={btnClass} onClick={handleClick}>
-      <span className={txtClass}>{text}</span>
-      <i className={icon}></i>
+    <button 
+      type="button"
+      className={props.className} 
+      onClick={props.click}
+    >
+      <span className={props.classSpan}>{props.text}</span>
+      <i className={props.classI}><span className="visuallyhidden">아이콘</span></i>
     </button>
   );
 }
 
-Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  btnClass: PropTypes.string.isRequired,
-  txtClass: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  handleClick: PropTypes.string.isRequired
+const Button = (props) => {
+  return (
+    <button 
+      className={props.className} 
+      onClick={props.click}
+    ><span className={props.classSpan}>{props.text}</span>
+    </button>
+  );
 }
 
-export default Button;
+
+export {Button , ButtonIcon};

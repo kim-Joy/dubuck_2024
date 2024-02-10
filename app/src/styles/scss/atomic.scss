@@ -1,10 +1,11 @@
-@import "var.scss";
-
+@import "var";
 
 /* Button
 ===================================== */
 
 .Btn {
+  font-family: $font_kr;
+  font-weight: 300;
   display: block;
   /* size */
   &.full {
@@ -27,6 +28,7 @@
     }
   }
   &.border{
+    background-color: transparent;
     border-width: 1px;
     border-style: solid;
     &.border-orange {
@@ -65,13 +67,11 @@
 /* icon btn */
 .Btn {
   &.icon {
-    padding: 0 20px; 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center; 
+    position: relative;
+    padding: 0 20px;
     > i {
-      display: inline-block;
+      position: absolute;
+      top: 0; right: 20px;
       width: 30px; height: 100%;
       &.arrow {
         -webkit-mask-image: url($url + "icon/arrow.svg");
@@ -93,7 +93,7 @@
         background-color: $white;
       }
     }
-    &.white {
+    &.border-orange {
       .arrow {
         background-color: $orange;
       }
@@ -114,3 +114,131 @@
     flex-wrap: nowrap;
   }
 }
+
+
+/* Form
+===================================== */
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-item {
+  width: 100%;
+ + .form-item {
+  margin-top: 24px;
+ } 
+ & .form-label {
+    display: block;
+    padding: 0 4px;
+    margin-bottom: 8px;
+    color: $black;
+    font: {
+      size: 14px;
+    }
+ }
+ & .form-input {
+    display: block;
+    width: 100%; height: 50px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid $gray_e2;
+    box-sizing: border-box;
+    color: $black;
+    outline: $orange;
+    font: {
+      size: 14px;
+      weight: 300;
+    }
+    &:placeholder {
+      color: $gray_8a;
+      font: {
+        size: 14px;
+        weight: 300;
+      }
+    }
+    &:hover,
+    &:focus {
+      outline: $orange;
+    }
+    &.full {
+      width: 100%;
+    }
+ }
+ & .form-guide {
+    display: block;
+    margin-left:4px;
+    margin-top: 4px;
+    color: $gray_68;
+    font: {
+      size: 10px;
+    }
+    &.warning {
+      color: $error;
+    }
+ }
+ /* */
+ &.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  >  *:not(span) {
+    width: calc((100% - 20px)/ 2)
+  }
+  & span {
+    display: inline-block;
+    width: 20px;
+    margin-top: 24px;
+    text-align: center;
+  }
+  & .select {
+    
+  }
+  & .full {
+    margin-top: 8px;
+  }
+ }
+}
+
+.select {
+  .select-btn {
+    position: relative;
+    display: block;
+    width: 100%; height: 50px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border: 1px solid $gray_e2;
+    border-radius: 5px;;
+    background-color: transparent;
+    color: $black;
+    text-align: left;
+    font: {
+      family: $font_en;
+      size: 14px;
+      weight: 300;
+    }
+    i {
+      position: absolute;
+      top:0; right: 8px;
+      width: 10px; height: 100%;
+      background-color: $black;
+      -webkit-mask-image: url($url + "icon/select.svg");
+      mask-image: url($url + "icon/select.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      -webkit-mask-size: 10px 8px;
+      mask-size: 10px 8px;
+      background-size: 10px 8px;
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      background-position: center center;
+    }
+  }
+  .option {
+    display: none;
+  }
+}
+
+.security-group {}
