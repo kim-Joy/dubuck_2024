@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Header, HeaderTitle} from "components/Organisms/Header";
 import {Button, ButtonIcon } from "components/Atom/Button";
 import {Input, Label, Select} from "components/Atom/Form";
 import Security from "components/Organisms/Security";
 
-function FindEmail() {
 
+function FindEmail() {
   return(
      <div className="Join">
         <HeaderTitle 
@@ -46,24 +47,30 @@ function FindEmail() {
                   plceholder={"직접 입력해주세요."}
                 />
             </div>
-            <Routes>
-              <Route path="/" component={<Security />}></Route>
-            </Routes>
+            <div className="ff">
+              <Security />
+            </div>
      
           </section>
 
         </form>
         <div className="Buttons">
-          <Link to="/Security">
-              <Button 
-                className={"Btn full paint orange radius-20 h-50"}
-                classSpan={"txt white font-18"}
-                text={"인증번호 발송"}
-              /> 
-              </Link>
-          </div>
+          <Button 
+            onClick={handlerClick}
+            className={"Btn full paint orange radius-20 h-50"}
+            classSpan={"txt white font-18"}
+            text={"인증번호 발송"}
+          /> 
+        </div>
      </div>
   )
+}
+
+export const handlerClick =({}) => {
+  console.log('sss');
+  const ff = document.querySelector(".ff");
+
+  ff.classList.toggle('on');
 }
 
 
