@@ -1,23 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import {Header, HeaderTitle} from "../components/Organisms/Header";
-import {Button, ButtonIcon } from "../components/Atom/Button";
-import {Input, Label, Select} from "../components/Atom/Form";
-import Security from "../components/Organisms/Security";
+import {Header, HeaderTitle} from "components/Organisms/Header";
+import {Button, ButtonIcon } from "components/Atom/Button";
+import {Input, Label, Select} from "components/Atom/Form";
+import Security from "components/Organisms/Security";
 
 function FindEmail() {
+
   return(
      <div className="Join">
         <HeaderTitle 
           title={"계정찾기"}
         />
         <form action="">
-          <section class="form">
+          <section className="form">
             <div className="form-item horizontal">
               <div>
                 <Label 
                   className={"form-label"}
-                  for={"email"}
+                  htmlFor={"email"}
                   text={"이메일"}
                 />
                 <Input
@@ -25,14 +26,13 @@ function FindEmail() {
                   name={""}
                   className={"form-input"}
                   type={"text"}
-                  required={true}
                 />
               </div>
               <span>@</span>
               <div>
                 <Label 
                   className={"indent form-label"}
-                  for={"email_adress"}
+                  htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
                 <Select 
@@ -46,23 +46,25 @@ function FindEmail() {
                   plceholder={"직접 입력해주세요."}
                 />
             </div>
-            <Security />
+            <Routes>
+              <Route path="/" component={<Security />}></Route>
+            </Routes>
+     
           </section>
 
-          <div className="Buttons">
-            <Link to="/Security"> 
+        </form>
+        <div className="Buttons">
+          <Link to="/Security">
               <Button 
                 className={"Btn full paint orange radius-20 h-50"}
                 classSpan={"txt white font-18"}
                 text={"인증번호 발송"}
-              />
-            </Link>  
+              /> 
+              </Link>
           </div>
-        </form>
      </div>
   )
 }
-
 
 
 export default FindEmail;

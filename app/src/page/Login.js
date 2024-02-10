@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Big from "../components/Organisms/Big";
-import {Input, Label, Select} from "../components/Atom/Form";
-import {Button, ButtonIcon} from "../components/Atom/Button";
+import Big from "components/Organisms/Big";
+import {Input, Label, Select} from "components/Atom/Form";
+import {Button, ButtonIcon} from "components/Atom/Button";
 
 function Login() {
   return(
@@ -12,7 +12,7 @@ function Login() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                for={"user_id"}
+                htmlFor={"user_id"}
                 text={"이메일"}
               />
               <Input
@@ -28,7 +28,7 @@ function Login() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                for={"user_pw"}
+                htmlFor={"user_pw"}
                 text={"비밀번호"}
               />
               <Input

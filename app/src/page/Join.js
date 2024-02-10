@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import {Header, HeaderTitle} from "../components/Organisms/Header";
-import {Button, ButtonIcon } from "../components/Atom/Button";
-import {Input, Label, Select} from "../components/Atom/Form";
+import {Header, HeaderTitle} from "components/Organisms/Header";
+import {Button, ButtonIcon } from "components/Atom/Button";
+import {Input, Label, Select} from "components/Atom/Form";
 import Security from 'components/Organisms/Security';
-import Policy from './Policy';
+import Policy from 'page/Policy';
 
 function Join() {
   return(
@@ -13,12 +13,12 @@ function Join() {
           title={"회원가입"}
         />
         <form action="">
-          <ul class="form">
+          <ul className="form">
             <li className="form-item horizontal">
               <div>
                 <Label 
                   className={"form-label"}
-                  for={"user_first"}
+                  htmlFor={"user_first"}
                   text={"성"}
                 />
                 <Input
@@ -33,7 +33,7 @@ function Join() {
               <div>
                 <Label 
                   className={"form-label"}
-                  for={"user_name"}
+                  htmlFor={"user_name"}
                   text={"이름"}
                 />
                 <Input
@@ -49,7 +49,7 @@ function Join() {
               <div>
                 <Label 
                   className={"form-label"}
-                  for={"email"}
+                  htmlFor={"email"}
                   text={"이메일"}
                 />
                 <Input
@@ -64,7 +64,7 @@ function Join() {
               <div>
                 <Label 
                   className={"indent form-label"}
-                  for={"email_adress"}
+                  htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
                 <Select 
@@ -84,7 +84,7 @@ function Join() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                for={"user_pw"}
+                htmlFor={"user_pw"}
                 text={"비밀번호"}
               />
               <Input
@@ -99,7 +99,7 @@ function Join() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                for={"user_pw2"}
+                htmlFor={"user_pw2"}
                 text={"비밀번호 확인"}
               />
               <Input

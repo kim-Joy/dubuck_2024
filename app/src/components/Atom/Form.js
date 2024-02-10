@@ -1,22 +1,17 @@
 import PropTypes from "prop-types";
-import "../../styles/scss/atomic.scss";
 
-
-const Select = (props) => {
+// label
+const Label =(props) => {
   return(
-    <div class="select">
-        <button 
-          type="button" className="select-btn"
-        >{props.text}
-        <i className="arrow"><span className="visuallyhidden">화살표</span></i>
-        </button>
-        <ul className="option">
-          <li>{props.text}</li>
-        </ul>
-    </div>
+    <label
+    className={props.className}
+    htmlFor={props.for}>
+      {props.text}
+    </label>
   )
 }
 
+// input
 const Input =(props) => {
   return(
     <input 
@@ -32,13 +27,19 @@ const Input =(props) => {
   )
 }
 
-const Label =(props) => {
+//select custom
+const Select = (props) => {
   return(
-    <label
-    className={props.className}
-    for={props.for}>
-      {props.text}
-    </label>
+    <div class="select">
+        <button 
+          type="button" className="select-btn"
+        >{props.text}
+        <i className="arrow"><span className="visuallyhidden">화살표</span></i>
+        </button>
+        <ul className="option">
+          <li>{props.text}</li>
+        </ul>
+    </div>
   )
 }
 

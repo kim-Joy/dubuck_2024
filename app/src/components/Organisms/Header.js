@@ -1,6 +1,16 @@
- 
 import { useNavigate } from 'react-router-dom';
 
+
+/* logo header */
+function Header(){
+  return(
+    <header className="Header">
+      <h1>Logo</h1>
+    </header>
+  )
+}
+
+/* title  header */
 function HeaderTitle(props) {
   const navigate = useNavigate();  
 
@@ -21,12 +31,5 @@ function HeaderTitle(props) {
   );
 }
 
-function Header(){
-  return(
-    <header className="Header">
-      <h1>Logo</h1>
-    </header>
-  )
-}
 
 export {Header, HeaderTitle} ;

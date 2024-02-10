@@ -1,6 +1,6 @@
 
-import {Header, HeaderTitle} from "../components/Organisms/Header";
-import {Button, ButtonIcon } from "../components/Atom/Button";
+import {Header, HeaderTitle} from "components/Organisms/Header";
+import {Button, ButtonIcon } from "components/Atom/Button";
 
 
 function Policy() {

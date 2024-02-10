@@ -1,3 +1,12 @@
+/* 공통 */
+@import "../css/reset.css";
+@import "../css/normaulrze.css";
+@import "../css/font.css";
+
 @import "var";
 @import "atomic";
 @import "organisms";
+
+
+/* style */
+@import "_page";

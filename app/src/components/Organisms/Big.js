@@ -1,12 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import "../../styles/scss/organisms.scss"
 import Image from '../../assets/images/common/dubuck.png';
 
-
 const Dubuck = <img src={Image} className="dubuck_symbolon" alt="두벅이" />
+
+// 상단 빅 배너
 function Big() {
   return (
     <div className="Big">

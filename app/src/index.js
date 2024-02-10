@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Intro from "./page/Intro";
-import Login from "./page/Login";
-import Join from "./page/Join";
-import FindEmail from "./page/FindEmail";
-import Policy from "./page/Policy";
-import NotFound from "./page/NotFound";
+import Intro from "page/Intro";
+import Login from "page/Login";
+import Join from "page/Join";
+import FindEmail from "page/FindEmail";
+import Policy from "page/Policy";
+import NotFound from "page/NotFound";
 
-
-import './styles/css/font.css';
-import './styles/css/reset.css';
-import './styles/css/normaulrze.css';
-
-import './styles/scss/_page.scss';
+import 'styles/scss/include.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
