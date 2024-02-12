@@ -1,5 +1,8 @@
-import PropTypes from "prop-types";
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
+
+
+const SELECT_BTN = document.querySelector(".select-btn");
 
 // label
 const Label =(props) => {
@@ -14,34 +17,40 @@ const Label =(props) => {
 
 // input
 const Input =(props) => {
+    
+let [IsValue, setIsValue] = useState('');
+let [IsDisabled, setIsDisabled] = useState(false);
+let ValueChange = (e) => {
+  setIsValue(e.target.value);
+}
+
   return(
     <input 
       id={props.id}
       name={props.name}
-      value={props.value}
+      value={IsValue}
       className={props.className}
       type={props.type}
       placeholder={props.placeholder}
       required = {props.required}
-      disabled = {props.disabled}
-      onChange = {props.onChange}
+      disabled = {IsDisabled}
+      onChange = {ValueChange}
     />
   )
 }
 
 // CheckBox
 const CheckBox =(props) => {
-  const [ischeked, setischeked] = useState(false);
+  let [IsChecked, setIsChecked] = useState(false);
 
   //체크박스 선택 ,해제
-  function checkHandled(e) {
-    //setischeked("true") = !setischeked("false");
+  function check(e) {
     console.log(e.target)
-    e.target = setischeked(true);
-    if(ischeked == true) {
-      e.target = setischeked(false);
+    e.target = setIsChecked(true);
+    if(IsChecked === true) {
+      e.target = setIsChecked(false);
     } else {
-      e.target = setischeked(true);
+      e.target = setIsChecked(true);
     }
   }
 
@@ -51,14 +60,14 @@ const CheckBox =(props) => {
         id={props.InputId} 
         type="checkbox"
         className="check-input"
-        checked={ischeked}
+        checked={IsChecked}
       />
       <label
         id={props.LabelId}
         name={props.name}
         className="check-label"
         htmlFor={props.htmlFor}
-        onClick={checkHandled}
+        onClick={check}
       >
         <span>{props.text}</span>
         <i></i>
@@ -70,48 +79,37 @@ const CheckBox =(props) => {
 
 //select custom : email
 const SelectEmail = (props) => {
-  const EmailOption = [
-    {key:1, value: "naver.com"},
-    {key:2, value: "daum.com"},
-    {key:3, value: "gmail.com"},
-    {key:4, value: "nate.com"},
-    {key:5, value: "yahoo.com"}
-  ]
 
-  const [isSelected, setisSelected] = useState('선택하세요.');
-  
-  //셀렉트 열고 닫기
-  function showHandler(e){
-    e.target.classList.toggle('on');
-  }
-  
-  //옵션 선택하기
+  const EMAIL_DOT = [
+    {key: "1", value: "naver.com"},
+    {key: "2", value: "daum.com"},
+    {key: "3", value: "gmail.com"},
+    {key: "4", value: "nate.com"},
+    {key: "5", value: "yahoo.com"}
+  ]
+  const [IsSelected, setIsSelected] = useState('선택하세요.');
+
+  //option click
   function optionClick(e){
-    const select = document.querySelector(".select-btn");
     const target = e.target.value;
     
-    select.classList.remove('on');
-    setisSelected(target);
-    //setisSelectedEtc("직접선택");
-    console.log(target);
+    SELECT_BTN.classList.remove('on');
+    setIsSelected(target);
   }
-
-
-
+ 
   return(
     <div class="select email">
         <button 
           type="button" 
           id={props.id}
           className="select-btn"
-          value={isSelected}
           onChange={props.onChange}
-          onClick={showHandler}
-        >{isSelected}
+          onClick={selectClick}
+        >{IsSelected}
         <i className="arrow"><span className="visuallyhidden">화살표</span></i>
         </button>
         <ul className="option">
-          {EmailOption.map((item) => (
+          {EMAIL_DOT.map((item) => (
             <li>
               <button 
                 type="button" 
@@ -127,7 +125,7 @@ const SelectEmail = (props) => {
               htmlFor="email_etc" 
               className="option-btn"
               value={"직접입력"}
-              onClick={emailHandler}
+              onClick={email_etc}
             >
               직접입력
             </label>
@@ -137,11 +135,15 @@ const SelectEmail = (props) => {
   )
 }
 
-function emailHandler(e){
-  console.log('dd');
-  document.querySelector('.select-btn').classList.remove('on');
- // setisEtcdisable(false);
+ 
+  //select toggle
+  function selectClick(e){
+    e.target.classList.toggle('on');
+  }
 
+  //Email 직접입력 
+function email_etc(){
+  SELECT_BTN.classList.remove('on');
 }
 
 export {Input , Label, CheckBox, SelectEmail};

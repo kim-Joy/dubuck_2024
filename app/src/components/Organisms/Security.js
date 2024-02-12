@@ -1,44 +1,42 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
-import {Button, ButtonIcon } from "components/Atom/Button";
-import {Input, Label, CheckBox, Select} from "components/Atom/Form";
+
+import {Button} from "components/Atom/Button";
+import {Input, Label} from "components/Atom/Form";
+
+
+let GUIDE = document.querySelector(".form-guide");
+const SECURITY_NUM = document.querySelector(".security-num").value;
 
 const Security = (props) => {
-  const [isdisabled, setisDisable] = useState(false);
   
-  //인증번호 노출
-  function securityHandler() {
-    const Guide = document.querySelector("#securityGuide");
-    const num = document.querySelector("#securityNum").value;
-    if(num == '1234') {
-      setisDisable(true);
-      Guide.classList.remove('warning');
-      Guide.style.display = "none";
+  //인증번호 체크
+  function securityChcek() {
+    
+
+    if(SECURITY_NUM === '1234') {
+      GUIDE.classList.remove('warning');
+      GUIDE.style.display = "none";
     } else {
       console.log('false');
-      Guide.textContent = "인증번호가 일치하지 않습니다."
-      Guide.classList.add('warning');
+      GUIDE.textContent = "인증번호가 일치하지 않습니다."
+      GUIDE.classList.add('warning');
     }
   }
-    return(
+      return(
       <div className="security-group">
           <Input 
-            className={"form-input"}
-            id={"securityNum"}
+            className={"form-input security-num"}
             placeholder={"인증번호"}
             type={"password"}
             required={true}
-            disabled = {isdisabled}
           />
           <Button 
-            onClick={securityHandler}
-            id={"securityBtn"}
+            onClick={securityChcek}
             className={"Btn fill-gray-49 radius-5 h-50"}
             classSpan={"txt-white"}
             text={"인증번호 확인"}
-            disabled = {isdisabled}
           />
-          <p className="form-guide" id="securityGuide">
+          <p className="form-guide">
             인증번호가 발송되었습니다.<br />발급된 인증번호를 입력하세요.
           </p>
       </div>
@@ -47,6 +45,7 @@ const Security = (props) => {
 }
 
 
+  
 
 
 

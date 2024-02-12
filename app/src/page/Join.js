@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import PropTypes from "prop-types";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import {Header, HeaderTitle} from "components/Organisms/Header";
-import {Button, ButtonIcon } from "components/Atom/Button";
+import { Link } from 'react-router-dom';
+
+import {HeaderTitle} from "components/Organisms/Header";
+import {Button} from "components/Atom/Button";
 import {Input, Label, CheckBox, SelectEmail} from "components/Atom/Form";
-import Security from 'components/Organisms/Security';
 import Policy from 'page/Policy';
 
+
+  //약관동의 체크 
+ // const allCheck = document.querySelector('#all_check');
 function Join() {
   
-  //약관동의 체크 
-  const allCheck = document.querySelector('#all_check');
-  
-
   return(
      <div className="Join">
         <HeaderTitle 
@@ -29,7 +26,6 @@ function Join() {
                 />
                 <Input
                   id={"user_first"}
-                  name={""}
                   className={"form-input"}
                   type={"text"}
                   required={true}
@@ -60,7 +56,6 @@ function Join() {
                 />
                 <Input
                   id={"email"}
-                  name={""}
                   className={"form-input"}
                   type={"text"}
                   required={true}
@@ -78,7 +73,6 @@ function Join() {
                 />
               </div>
               <Input
-                  name={""}
                   className={"form-input full"}
                   type={"text"}
                   plceholder={"직접 입력해주세요."}
@@ -107,7 +101,6 @@ function Join() {
               />
               <Input
                 id={"user_pw2"}
-                name={""}
                 className={"form-input"}
                 type={"password"}
                 required={true}
@@ -122,8 +115,7 @@ function Join() {
                 <CheckBox 
                   InputId={"all_check"}
                   htmlFor={"all_check"}
-                  id={"dd"}
-                  name={"checkbox"}
+                  name={"all_check"}
                   text={"전체 동의"}
                 />
               </li>
@@ -131,7 +123,7 @@ function Join() {
                 <CheckBox 
                    InputId={"agree01"}
                    htmlFor={"agree01"}
-                   name={"checkbox"}
+                   name={"agree01"}
                    text={"이용약관 동의(필수)"}
                 />
                 <Link to="/Policy" >
@@ -142,7 +134,7 @@ function Join() {
                 <CheckBox 
                    InputId={"agree02"}
                    htmlFor={"agree02"}
-                   name={"checkbox"}
+                   name={"agree02"}
                    text={"마케팅약관 동의(선택)"}
                 />
                 <Link to="/Marketing" >

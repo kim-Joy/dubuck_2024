@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Big from "components/Organisms/Big";
-import {Button, ButtonIcon } from "components/Atom/Button";
+import {ButtonIcon } from "components/Atom/Button";
 
 function Intro() {
   return(

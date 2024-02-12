@@ -1,13 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import Big from "components/Organisms/Big";
-import {Input, Label, Select} from "components/Atom/Form";
-import {Button, ButtonIcon} from "components/Atom/Button";
-import Confirm from 'components/Organisms/Confrim';
+import {Input, Label} from "components/Atom/Form";
+import {ButtonIcon} from "components/Atom/Button";
 
 
-function Login() {
-  
+const USER_ID = document.querySelector("#user_id");
+const USER_PW = document.querySelector("#user_pw");
+let GUIDE = document.querySelector(".form-guide");
+
+function Login() {  
   return(
      <div className="Login">
         <Big />
@@ -21,13 +23,17 @@ function Login() {
               />
               <Input
                 id={"user_id"}
-                name={""}
                 className={"form-input"}
                 type={"text"}
                 placeholder={"@를 포함한 이메일을 입력하세요."}
                 required={true}
               />
-              <p className="form-guide warning">올바른 이메일을 입력해주세요.</p>
+              <p 
+                className="form-guide warning"
+                style={{display: "none"}} 
+              >
+                올바른 이메일을 입력해주세요.
+              </p>
             </li>
             <li className="form-item">
               <Label 
@@ -48,7 +54,7 @@ function Login() {
         <div className="Buttons inner40">
             <ButtonIcon 
               id={"LoginBtn"}
-              onClick={handlerClick}
+              onClick={LoginCheck}
               className={"Btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
               text={"로그인"}
@@ -56,37 +62,31 @@ function Login() {
             />
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
-        <button onClick={openDialog}>컨피그 열려라</button>
-        <Confirm 
-          title ={"타이틀"}
-          desc={`비밀번호를\n수정하시겠습니까?`}
-        />
      </div>
   )
 }
 
-
-export const handlerClick =({}) => {
-  const userId = document.querySelector("#user_id");
-  const userPw = document.querySelector("#user_pw");
-  console.log('sss');
-  const ff = document.querySelector(".ff");
-
-  ff.classList.toggle('on');
+//로그인 체크
+export const LoginCheck = (e) => {
+  if(USER_ID.value === "admin") {
+    if(USER_PW.value === "1234"){
+      alert("로그인 성공");
+    } else {
+      alert("비밀번호를 입력하세요.");
+    }
+  } else {
+    alert("이메일을 입력하세요.");
+    GUIDE.style.display = 'block';
+  }
 }
 
-
-// 컨피그 열기 테스트
-function openDialog(e) {
-  const dialog = document.querySelector(".Dialog");
-  dialog.showModal();
- }
 
 
 export default Login;
 
 /* 
 
-value 값 넣는경우 인풋 입력 안되는거 확인
+1. 이메일 정규화 체크 -> 가이드 노출
+2. alert 대신 컨피그 노출
 
 */
