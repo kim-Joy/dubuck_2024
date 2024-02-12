@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
-
 
 const SELECT_BTN = document.querySelector(".select-btn");
 
@@ -28,7 +26,7 @@ let ValueChange = (e) => {
     <input 
       id={props.id}
       name={props.name}
-      value={IsValue}
+      defaultValue={IsValue}
       className={props.className}
       type={props.type}
       placeholder={props.placeholder}
@@ -81,11 +79,11 @@ const CheckBox =(props) => {
 const SelectEmail = (props) => {
 
   const EMAIL_DOT = [
-    {key: "1", value: "naver.com"},
-    {key: "2", value: "daum.com"},
-    {key: "3", value: "gmail.com"},
-    {key: "4", value: "nate.com"},
-    {key: "5", value: "yahoo.com"}
+    {key: "1", defaultValue: "naver.com"},
+    {key: "2", defaultValue: "daum.com"},
+    {key: "3", defaultValue: "gmail.com"},
+    {key: "4", defaultValue: "nate.com"},
+    {key: "5", defaultValue: "yahoo.com"}
   ]
   const [IsSelected, setIsSelected] = useState('선택하세요.');
 
@@ -115,16 +113,16 @@ const SelectEmail = (props) => {
                 type="button" 
                 className="option-btn"
                 key={item.key}
-                value={item.value}
+                defaultValue={item.value}
                 onClick={optionClick}
-              >{item.value}</button>
+              >{item.defaultValue}</button>
             </li>           
            ))}
           <li>
             <label 
               htmlFor="email_etc" 
               className="option-btn"
-              value={"직접입력"}
+              defaultValue={"직접입력"}
               onClick={email_etc}
             >
               직접입력

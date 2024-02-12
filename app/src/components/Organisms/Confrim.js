@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from "prop-types";
-import {Button, ButtonIcon } from "components/Atom/Button";
-import {Input, Label, CheckBox, Select} from "components/Atom/Form";
+import React from 'react';
+import {Button} from "components/Atom/Button";
 
 
 function Confirm(prop) {

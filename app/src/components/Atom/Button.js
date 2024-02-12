@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
-
 
 // button 
 const Button = (props) => {
   
-  //let [IsDisabled, setIsDisabled] = useState(false);
+  let [IsDisabled, setIsDisabled] = useState(false);
   
   return (
     <button 
@@ -13,7 +11,7 @@ const Button = (props) => {
       id={props.id}
       className={props.className} 
       onClick={props.onClick}
-      value={props.value}
+      defaultValue={props.value}
       disabled = {false}
 
     ><span className={props.classSpan}>{props.text}</span>
@@ -24,7 +22,7 @@ const Button = (props) => {
 // button icon 조합
 const ButtonIcon = (props) => {
   
-  //let [IsDisabled, setIsDisabled] = useState(false);
+  let [IsDisabled, setIsDisabled] = useState(false);
 
   return (
     <button 
