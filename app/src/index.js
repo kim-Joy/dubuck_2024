@@ -6,6 +6,7 @@ import Login from "page/Login";
 import Join from "page/Join";
 import FindEmail from "page/FindEmail";
 import Policy from "page/Policy";
+import Marketing from "page/Marketing";
 import NotFound from "page/NotFound";
 
 import 'styles/scss/include.scss';
@@ -19,6 +20,7 @@ root.render(
       <Route path="/Join" element={<Join />}></Route>
       <Route path="/FindEmail" element={<FindEmail />}></Route>
       <Route path="/Policy" element={<Policy />}></Route>
+      <Route path="/Marketing" element={<Marketing />}></Route>
       <Route path="/*" element={<NotFound />}></Route>
       
       </Routes>

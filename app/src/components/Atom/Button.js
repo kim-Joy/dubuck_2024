@@ -5,9 +5,11 @@ import PropTypes from "prop-types";
 const Button = (props) => {
   return (
     <button 
-     type="button"
+      type="button"
+      id={props.id}
       className={props.className} 
       onClick={props.onClick}
+      disabled = {props.disabled}
     ><span className={props.classSpan}>{props.text}</span>
     </button>
   );
@@ -18,8 +20,9 @@ const ButtonIcon = (props) => {
   return (
     <button 
       type="button"
+      id={props.id}
       className={props.className} 
-      oonClick={props.onClick}
+      onClick={props.onClick}
     >
       <span className={props.classSpan}>{props.text}</span>
       <i className={props.classI}><span className="visuallyhidden">아이콘</span></i>

@@ -4,25 +4,26 @@
 ===================================== */
 
 .Header {
+  width: 100%; height: 50px;
   display: flex;
   flex-wrap: wrap;
-  width: 100%; height: 50px;
-  padding: 0 20px;
   align-items: center;
+  padding: 0 20px;
   .hd-back {
     width: 30px; height: 30px;
     background-color: $black;
-    -webkit-mask-image: url($url + "icon/hd_back.svg");
-    mask-image: url($url + "icon/hd_back.svg");
+    -webkit-mask-image: url($url + "icon/arrow_round.svg");
+    mask-image: url($url + "icon/arrow_round.svg");
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     background-repeat: no-repeat;
     -webkit-mask-size: 7px 10px;
     mask-size: 7px 10px;
     background-size: 7px 10px;
-    -webkit-mask-position: left center;
-    mask-position: left center;
-    background-position: left center;
+    -webkit-mask-position: right center;
+    mask-position: right center;
+    background-position: right center;
+    transform: rotate(180deg);
   }
   h2 {
     color: $black;
@@ -35,7 +36,6 @@
 
 /* article
 ===================================== */
-
 .Big {
   & .group {
     max-height: 300px;
@@ -72,5 +72,126 @@
     max-width: 100%;
     margin-top: -54px; 
     padding-left: 47px; 
+  }
+}
+
+.security-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .form-input {
+    width: 120px;
+  }
+  .Btn {
+    width: calc(100% - 128px);
+    margin-left: 8px;
+  }
+  .form-guide {
+    width: 100%; 
+    text-align: right;
+    white-space: pre-line;
+  }
+}
+
+.select {
+  &.email {
+    font-family: $font_en;
+  }
+}
+
+.agreeSection  {
+  h3 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: $black;
+  }
+  li {
+    position: relative;
+    margin-top: 4px;
+  }
+  .more {
+    position: absolute; 
+    top: 0; right: 0;
+    width: 20px; height: 20px;
+    background-color: $gray_8a;
+    -webkit-mask-image: url($url + "icon/arrow_round.svg");
+    mask-image: url($url + "icon/arrow_round.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -webkit-mask-size: 7px 10px;
+    mask-size: 7px 10px;
+    background-size: 7px 10px;
+    -webkit-mask-position: right center;
+    mask-position: right center;
+    background-position: right center;
+  }
+}
+
+.Dialog {
+  width: calc(100% - 40px);
+  max-width: 325px; max-height: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0;
+  background-color: $white;
+  outline: $orange;
+}
+.Confirm {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 20px;
+  box-sizing: border-box;
+  .head {
+    position: relative;
+    height: 36px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    h3 {
+      width: calc(100% - 30px);
+      color: $black;
+      font-size:18px;
+      font-weight: 700;
+    }
+    .close-btn {
+      position:absolute;
+      top: 10px; right: 0; 
+      width: 20px; height: 20px;
+      background-color: $black;
+      -webkit-mask-image: url($url + "icon/close.svg");
+      mask-image: url($url + "icon/close.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      -webkit-mask-size: 10px 10px;
+      mask-size: 10px 10px;
+      background-size: 10px 10px;
+      -webkit-mask-position: right center;
+      mask-position: right center;
+      background-position: right center;
+    }
+  }
+  .body {
+    padding: 40px 0 50px;
+    .desc {
+      font-size: 14px;
+      color: $black;
+      line-height: 1.2;
+      text-align: center;
+      white-space: pre-line
+      ;
+    }
+  }
+  .foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    .Btn {
+      width: 50%;
+      max-width: 130px;
+    }
   }
 }

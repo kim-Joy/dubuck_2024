@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Header, HeaderTitle} from "components/Organisms/Header";
 import {Button, ButtonIcon } from "components/Atom/Button";
-import {Input, Label, Select} from "components/Atom/Form";
+import {Input, Label, CheckBox, SelectEmail} from "components/Atom/Form";
 import Security from 'components/Organisms/Security';
 import Policy from 'page/Policy';
 
 function Join() {
+  
+  //약관동의 체크 
+  const allCheck = document.querySelector('#all_check');
+  
+
   return(
      <div className="Join">
         <HeaderTitle 
           title={"회원가입"}
         />
         <form action="">
-          <ul className="form">
+          <ul className="form inner20">
             <li className="form-item horizontal">
               <div>
                 <Label 
@@ -67,7 +73,7 @@ function Join() {
                   htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
-                <Select 
+                <SelectEmail 
                   text={"선택하세요."}
                 />
               </div>
@@ -77,9 +83,6 @@ function Join() {
                   type={"text"}
                   plceholder={"직접 입력해주세요."}
                 />
-            </li>
-            <li>
-              <Security />
             </li>
             <li className="form-item">
               <Label 
@@ -112,16 +115,46 @@ function Join() {
               <p className="form-guide warning">비밀번호가 일치하지 않습니다.</p>
             </li>
           </ul>
-          <div>
-            전체동의
-            <Link to="/Policy" >
-              체크박스
-            </Link>
-          </div>
-          <div className="Buttons">
+          <section className="agreeSection inner20">
+            <h3>약관동의</h3>
+            <ul>
+              <li>
+                <CheckBox 
+                  InputId={"all_check"}
+                  htmlFor={"all_check"}
+                  id={"dd"}
+                  name={"checkbox"}
+                  text={"전체 동의"}
+                />
+              </li>
+              <li>
+                <CheckBox 
+                   InputId={"agree01"}
+                   htmlFor={"agree01"}
+                   name={"checkbox"}
+                   text={"이용약관 동의(필수)"}
+                />
+                <Link to="/Policy" >
+                  <i className="more"><span className="visuallyhidden">더보기</span></i>  
+              </Link>
+              </li>
+              <li>
+                <CheckBox 
+                   InputId={"agree02"}
+                   htmlFor={"agree02"}
+                   name={"checkbox"}
+                   text={"마케팅약관 동의(선택)"}
+                />
+                <Link to="/Marketing" >
+                  <i className="more"><span className="visuallyhidden">더보기</span></i>  
+                </Link>
+              </li>
+            </ul>
+          </section>
+          <div className="Buttons inner20">
             <Button 
-                className={"Btn full paint orange radius-20 h-50"}
-                classSpan={"txt white font-18"}
+                className={"Btn full fill-orange radius-20 h-50"}
+                classSpan={"txt-white font-18"}
                 text={"가입하기"}
               />
           </div>
@@ -129,7 +162,6 @@ function Join() {
      </div>
   )
 }
-
 
 
 export default Join;

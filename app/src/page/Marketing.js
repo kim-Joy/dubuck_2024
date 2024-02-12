@@ -3,11 +3,11 @@ import {Header, HeaderTitle} from "components/Organisms/Header";
 import {Button, ButtonIcon } from "components/Atom/Button";
 
 
-function Policy() {
+function Marketing() {
   return(
-     <div className="Policy">
+     <div className="Marketing">
         <HeaderTitle 
-          title={"이용약관 동의"}
+          title={"마케팅약관 동의"}
         />
         <div>
           약관동의 내용 컴포넌트 만들기 
@@ -26,4 +26,4 @@ function Policy() {
 
 
 
-export default Policy;
+export default Marketing;

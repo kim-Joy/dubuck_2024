@@ -1,21 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import {Header, HeaderTitle} from "components/Organisms/Header";
 import {Button, ButtonIcon } from "components/Atom/Button";
-import {Input, Label, Select} from "components/Atom/Form";
+import {Input, Label, CheckBox, SelectEmail} from "components/Atom/Form";
 import Security from "components/Organisms/Security";
 
 
 function FindEmail() {
+  
+  const [isValue, setisValue] = useState('');
+
+  const ValueChange = (e) => {
+    setisValue(e.target.value);
+  }
+
+  function handlerClick () {
+    const email = document.querySelector("#email");
+    const select = document.querySelector(".select-btn");
+    const security = document.querySelector(".security-group");
+  
+    if(email.value.length > 0) {
+      if(select.value == "선택하세요."){
+        alert("이메일 선택하세요.")
+      } else {
+        security.style.display = 'flex';
+      }
+      
+    } else {
+      alert("이메일을 입력하세요.")
+    }
+   } 
+
   return(
-     <div className="Join">
+     <div className="FindEmil">
         <HeaderTitle 
           title={"계정찾기"}
         />
         <form action="">
-          <section className="form">
-            <div className="form-item horizontal">
+          <ul className="form inner20">
+            <li className="form-item horizontal">
               <div>
                 <Label 
                   className={"form-label"}
@@ -27,6 +51,8 @@ function FindEmail() {
                   name={""}
                   className={"form-input"}
                   type={"text"}
+                  value={isValue}
+                  onChange={ValueChange}
                 />
               </div>
               <span>@</span>
@@ -36,29 +62,32 @@ function FindEmail() {
                   htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
-                <Select 
+                <SelectEmail 
+                  value={"선택하세요."}
                   text={"선택하세요."}
+
                 />
               </div>
               <Input
-                  name={""}
-                  className={"form-input full"}
+                  name={"emailEtc"}
+                  id={"email_etc"}
+                  className={"form-input full email-etc"}
                   type={"text"}
-                  plceholder={"직접 입력해주세요."}
+                  placeholder={"직접 입력해주세요."}
+                  disabled={true}
                 />
-            </div>
-            <div className="ff">
+            </li>
+            <li className="form-item">
               <Security />
-            </div>
-     
-          </section>
+            </li>
+          </ul>
 
         </form>
-        <div className="Buttons">
+        <div className="Buttons inner20">
           <Button 
             onClick={handlerClick}
-            className={"Btn full paint orange radius-20 h-50"}
-            classSpan={"txt white font-18"}
+            className={"Btn full fill-orange radius-20 h-50"}
+            classSpan={"txt-white font-18"}
             text={"인증번호 발송"}
           /> 
         </div>
@@ -66,12 +95,9 @@ function FindEmail() {
   )
 }
 
-export const handlerClick =({}) => {
-  console.log('sss');
-  const ff = document.querySelector(".ff");
 
-  ff.classList.toggle('on');
-}
+  
+  
 
 
 export default FindEmail;

@@ -1,7 +1,5 @@
-
 /* Button
 ===================================== */
-
 .Btn {
   font-family: $font_kr;
   font-weight: 300;
@@ -12,17 +10,20 @@
   }
 
   /* bg-color: */
-  &.paint{
-    &.orange {
+  &.fill{
+    &-orange {
       background-color: $orange;
     }
-    &.gray-f1 {
+    &-gray-f1 {
       background-color: $gray_f1;
     }
-    &.gray-e2 {
+    &-gray-e2 {
       background-color: $gray_e2;
     }
-    &.white {
+    &-gray-49 {
+      background-color: $gray_49;
+    }
+    &-white {
       background-color: $white;
     }
   }
@@ -30,35 +31,40 @@
     background-color: transparent;
     border-width: 1px;
     border-style: solid;
-    &.border-orange {
+
+    &-orange {
       border-color: $orange;
     }
       
-    &.border-8a {
+    &-gray-8a {
       border-color: $gray_8a;
     }
-    &.border-whtie {
+    &-whtie {
       border-color: $white;
     }
+  }
+  &:disabled,
+  &.disabled {    
+    cursor: not-allowed;
   }
 }
 
 /* txt btn */
 .Btn {
   .txt {
-    &.orange {
+    &-orange {
       color: $orange; 
     }
-    &.grape-deep {
+    &-grape-deep {
       color: $grape_deep;
     }
-    &.graye-68{
+    &-graye-68{
     color: $gray_68;
     }
-    &.gtay-8a{
+    &-gtay-8a{
       color: $gray_8a;
     }
-    &.white {
+    &-white {
       color: $white;
     }
   }
@@ -73,8 +79,8 @@
       top: 0; right: 20px;
       width: 30px; height: 100%;
       &.arrow {
-        -webkit-mask-image: url($url + "icon/arrow.svg");
-        mask-image: url($url + "icon/arrow.svg");
+        -webkit-mask-image: url($url + "icon/arrow_round_key.svg");
+        mask-image: url($url + "icon/arrow_round_key.svg");
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
         background-repeat: no-repeat;
@@ -87,7 +93,7 @@
       }
     }
     > .txt {width: calc(100% - 40px); }
-    &.orange {
+    &.fill-orange {
       .arrow {
         background-color: $white;
       }
@@ -105,7 +111,7 @@
 .Buttons {
   position: relative; 
   margin-top: 40px;
-   .Btn {
+  .Btn {
     margin-top: 8px;
   }
   &.horizontal {
@@ -120,7 +126,11 @@
 .form {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
+
+/*  input
+------------------------ */
 .form-item {
   width: 100%;
  + .form-item {
@@ -149,16 +159,27 @@
       size: 14px;
       weight: 300;
     }
-    &:placeholder {
+    &:placeholder,
+    &::placeholder {
       color: $gray_8a;
       font: {
         size: 14px;
         weight: 300;
       }
     }
+    &:disabled,
+    &.disabled {
+      background-color: $gray_f1;
+      color: $gray_68;
+      cursor: not-allowed;
+      &.form-input {
+        border-color: transparent !important;
+      }
+    }
     &:hover,
     &:focus {
-      outline: $orange;
+      outline: $orange !important;
+      border: 1px solid $orange !important
     }
     &.full {
       width: 100%;
@@ -200,9 +221,88 @@
  }
 }
 
-.select {
-  .select-btn {
+/*  checkbox
+------------------------ */
+.checkbox {
+  position: relative;
+  & .check-input {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    margin: -1px; 
+    clip-path: polygon(0 0, 0 0, 0 0);
+    clip-path: inset(50%); 
+    clip: rect(0, 0, 0, 0); 
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    &:checked + .check-label:before {
+      content: ''; 
+      position: absolute; 
+      z-index: 1;
+      width: 18px; height: 9px;
+      top: 5px; left: 6px;
+      background-color: $orange;
+      -webkit-mask-image: url($url + "icon/checked_round.svg");
+      mask-image: url($url + "icon/checked_round.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      -webkit-mask-size: 18px 9px;
+      mask-size: 18px 9px;
+      background-size: 18px 9px;
+      -webkit-mask-position: right center;
+      mask-position: right center;
+      background-position: right center;
+    }
+  }
+  & .check-label {
     position: relative;
+    display: inline-block;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;   
+      width: 20px; height: 20px;
+      border: 1px solid $gray_e2;
+      box-sizing: border-box;
+      background-color: transparent;
+    }
+    &:before.on {
+      content: ''; 
+      position: absolute; 
+      top: 0; right: 0;
+      background-color: $gray_8a;
+      -webkit-mask-image: url($url + "icon/checked_round.svg");
+      mask-image: url($url + "icon/checked_round.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      -webkit-mask-size: 18px 9px;
+      mask-size: 18px 9px;
+      background-size: 18px 9px;
+      -webkit-mask-position: right center;
+      mask-position: right center;
+      background-position: right center;
+    }
+    span {
+      display: inline-block;
+      margin-left: 31px; 
+      font-size: 12px;
+      color: $black;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+    
+  }
+}
+
+/* txt check */
+
+/*  select
+------------------------ */
+.select {
+  position: relative;
+  .select-btn {
     display: block;
     width: 100%; height: 50px;
     padding: 0 8px;
@@ -212,18 +312,31 @@
     background-color: transparent;
     color: $black;
     text-align: left;
+    &:hover,
+    &:focus {
+      outline: $orange !important;
+      border: 1px solid $orange !important;
+    }
     font: {
       family: $font_en;
       size: 14px;
       weight: 300;
+    }
+    &.on {
+      > i {
+        transform: rotate(-90deg);
+      }
+      + .option {
+        display: block;
+      }
     }
     i {
       position: absolute;
       top:0; right: 8px;
       width: 10px; height: 100%;
       background-color: $black;
-      -webkit-mask-image: url($url + "icon/select.svg");
-      mask-image: url($url + "icon/select.svg");
+      -webkit-mask-image: url($url + "icon/arrow_round.svg");
+      mask-image: url($url + "icon/arrow_round.svg");
       -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
       background-repeat: no-repeat;
@@ -233,11 +346,38 @@
       -webkit-mask-position: center center;
       mask-position: center center;
       background-position: center center;
+      transform: rotate(90deg);
     }
   }
   .option {
     display: none;
+    position: absolute;
+    z-index: 10; 
+    top: 54px; left: 0; 
+    width: 100%; height: auto;
+    padding: 10px 10px 15px 10px;
+    border-radius: 5px;;
+    border: 1px solid $gray_e2;
+    box-sizing: border-box;
+    background-color: $white;
+    li + li {
+      margin-top: 8px;
+    }
+    & .option-btn {
+      display: block;
+      width: 100%; 
+      min-height: 18px;
+      font-size: 12px;
+      font-weight: 300;
+      color: $gray_68;
+      text-align: left;
+      cursor: pointer;
+      &.on,
+      &:focus,
+      &:hover {
+        color: $orange;
+      }
+
+    }
   }
 }
-
-.security-group {}
