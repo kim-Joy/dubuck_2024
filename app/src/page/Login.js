@@ -73,6 +73,7 @@ function Login() {
           </ul>
         </form>
         <div className="Buttons inner40">
+          <Link to="/Main">
             <Button 
               onClick={LoginCheck}
               className={"Btn full fill-orange radius-20 h-50 icon"}
@@ -85,6 +86,7 @@ function Login() {
                 className={"arrow"}
               />
             </Button >
+          </Link>
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
 
@@ -102,7 +104,7 @@ function LoginCheck(){
   const USER_EMAIL = document.querySelector("#user_email");
   const USER_PW = document.querySelector("#user_pw");
   let GUIDE = document.querySelector(".form-guide");
-
+/*
   if(USER_EMAIL.value === "admin"){
     if(USER_PW.value === "1234"){
       alert("로그인 성공");
@@ -112,7 +114,7 @@ function LoginCheck(){
   } else {
     alert("이메일을 입력하세요.");
     GUIDE.style.display = 'block';
-  }
+  }*/
 }
 
 

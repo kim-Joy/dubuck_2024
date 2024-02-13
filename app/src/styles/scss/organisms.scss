@@ -195,3 +195,79 @@
     }
   }
 }
+
+
+.list-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* 아이템 리스트 _종류별 */
+.list-group {
+  &.calendar { 
+    justify-content: space-evenly;
+    gap: 15px 15px;
+    margin-top: -110px;
+    .item {
+      &:nth-child(2n + 1){
+        align-self: self-start;
+      }
+      &:nth-child(2n) button{
+        text-align: left;
+      }
+    }
+    button {
+      display: block;
+      width: 160px; height: 160px;
+      padding: 20px 30px;
+      border-radius: 20px;
+      text-align: right;
+      strong {
+        display: block;
+        color: $white;
+        font-size:32px;
+        font-family: $font_kr;
+        font-weight: 700;
+      } 
+    }
+    & .item-calendar{
+        padding: 52px 30px 20px 30px;
+        background : {
+        color: $gray_24;
+        image: url($url + "icon/calendar_head.svg");
+        repeat: no-repeat;
+        size: contain;
+        position: top -10px center;
+    }
+    }
+    & .item-word{
+      background : {
+      color: $grape_61;
+      image: url($url + "icon/book.svg");
+      repeat: no-repeat;
+      size: 24px 24px;
+      position: bottom 20px left 20px;
+      }
+    }
+    & .item-exam{
+      background : {
+      color: $orange;
+      image: url($url + "icon/exam.svg");
+      repeat: no-repeat;
+      size: 24px 24px;
+      position: bottom 20px right 30px;
+      }
+    }
+    & .item-result{
+      background : {
+      color: $red_f6;
+      image: url($url + "icon/flag.svg");
+      repeat: no-repeat;
+      size: 24px 24px;
+      position: bottom 20px left 20px;
+      }
+    }
+  } 
+
+}
