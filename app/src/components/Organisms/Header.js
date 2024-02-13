@@ -1,35 +1,40 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
 /* logo header */
-function Header(){
+function Header({children}){
   return(
     <header className="Header">
-      <h1>Logo</h1>
+      {children}
     </header>
   )
 }
 
-/* title  header */
-function HeaderTitle(props) {
+function Header_logo(){
+  return(
+    <h1>Logo</h1>
+  )
+}
+
+
+function Header_title(props) {
   const navigate = useNavigate();  
 
   const handleBack = () => {
     navigate(-1); 
   }; 
 
-  return (
-    <header className="Header">
-      <button 
-        className="hd-back"
-        onClick={handleBack}
-      >
+  return(
+    <>
+      <button className="hd-back" onClick={handleBack}>
         <span className="visuallyhidden">뒤로가기</span>
       </button>
       <h2>{props.title}</h2>
-    </header>
-  );
+    </>
+  )
+
 }
 
 
-export {Header, HeaderTitle} ;
+export {Header, Header_title, Header_logo} ;

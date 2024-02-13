@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
 // button 
-const Button = (props) => {
-  
-  
+const Button = ({props, children}) => {
   return (
     <button 
       type="button"
@@ -11,30 +9,33 @@ const Button = (props) => {
       className={props.className} 
       onClick={props.onClick}
       disabled = {props.disabled}
-
-    ><span className={props.classSpan}>{props.text}</span>
+    >
+    {children}
     </button>
   );
+}
+
+const Btn_text = (props) => {
+  return(
+    <span 
+      className={props.className}
+    >{props.text}
+    </span>
+  )
 }
 
 // button icon 조합
-const ButtonIcon = (props) => {
+const Btn_icon = (props) => {
 
   return (
-    <button 
-      type="button"
-      id={props.id}
-      className={props.className} 
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
-      <span className={props.classSpan}>{props.text}</span>
-      <i className={props.classI}><span className="visuallyhidden">아이콘</span></i>
-    </button>
+      <i 
+        className={props.className}
+      >
+        <span className="visuallyhidden">아이콘</span>
+      </i>
   );
 }
 
 
 
-
-export {Button , ButtonIcon};
+export {Button, Btn_text,Btn_icon};

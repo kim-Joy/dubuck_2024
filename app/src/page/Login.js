@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import {Input, Label} from "components/Atom/Form";
-import {ButtonIcon} from "components/Atom/Button";
+import {Button, Btn_text,Btn_icon} from "components/Atom/Button";
 
 import Big from "components/Organisms/Big";
-import {Confirm} from "components/Organisms/Confirm";
+import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
 function Login() { 
@@ -73,18 +73,26 @@ function Login() {
           </ul>
         </form>
         <div className="Buttons inner40">
-            <ButtonIcon 
+            <Button 
               onClick={LoginCheck}
               className={"Btn full fill-orange radius-20 h-50 icon"}
-              classSpan={"txt-white font-18"}
-              text={"로그인"}
-              classI={"arrow"}
-            />
+            >
+              <Btn_text 
+                className={"txt-white font-18"}
+                text={"로그인"}
+              />
+              <Btn_icon 
+                className={"arrow"}
+              />
+            </Button >
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
 
 
         <button onClick={openDialog}>컨피그 열려라</button>
+        <Confirm>
+          <Confirm_body message={"제발 보여라"} />
+        </Confirm>
      </div>
   )
 }

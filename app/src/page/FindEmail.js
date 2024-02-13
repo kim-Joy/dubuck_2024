@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import {HeaderTitle} from "components/Organisms/Header";
-import {Button} from "components/Atom/Button";
+import {Header, Header_title, Header_logo} from "components/Organisms/Header";
+import {Button, Btn_text,Btn_icon} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
 import {SelectEmail} from "components/Atom/Select";
 import {Security} from "components/Organisms/Security";
@@ -34,9 +34,11 @@ function FindEmail() {
 
   return(
      <div className="FindEmil">
-        <HeaderTitle 
-          title={"계정찾기"}
-        />
+        <Header>
+          <Header_title 
+            title={"계정찾기"}
+          />
+        </Header>
         <form action="">
           <ul className="form inner20">
             <li className="form-item horizontal">
@@ -88,9 +90,12 @@ function FindEmail() {
           <Button 
             onClick={EmailCheck}
             className={"Btn full fill-orange radius-20 h-50"}
-            classSpan={"txt-white font-18"}
-            text={"인증번호 발송"}
-          /> 
+          >
+            <Btn_text 
+             classSpan={"txt-white font-18"}
+             text={"인증번호 발송"}
+            />
+          </Button> 
         </div>
      </div>
   )
