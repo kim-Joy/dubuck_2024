@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // button 
-const Button = ({props, children}) => {
+const Button = (props, {children}) => {
   return (
     <button 
       type="button"
@@ -10,7 +10,7 @@ const Button = ({props, children}) => {
       onClick={props.onClick}
       disabled = {props.disabled}
     >
-    {children}
+    {props.children}
     </button>
   );
 }
