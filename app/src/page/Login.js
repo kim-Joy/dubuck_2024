@@ -1,15 +1,31 @@
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import Big from "components/Organisms/Big";
 import {Input, Label} from "components/Atom/Form";
 import {ButtonIcon} from "components/Atom/Button";
 
+import Big from "components/Organisms/Big";
+import {Confirm} from "components/Organisms/Confirm";
 
-const USER_ID = document.querySelector("#user_id");
-const USER_PW = document.querySelector("#user_pw");
-let GUIDE = document.querySelector(".form-guide");
 
-function Login() {  
+function Login() { 
+
+  // input state
+  const [inputs, setinputs] = useState({
+    email : "",
+    pw: ""
+
+   });
+   const {
+    email,pw
+   } = inputs;
+  const valueChange = (e) => {
+    setinputs({
+      ...inputs,
+      [e.target.name]: e.target.value
+    });
+  }
+  
   return(
      <div className="Login">
         <Big />
@@ -18,15 +34,18 @@ function Login() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                htmlFor={"user_id"}
+                htmlFor={"email"}
                 text={"이메일"}
               />
               <Input
-                id={"user_id"}
+                id={"email"}
                 className={"form-input"}
                 type={"text"}
                 placeholder={"@를 포함한 이메일을 입력하세요."}
                 required={true}
+                name={"email"}
+                value={email}
+                onChange={valueChange}
               />
               <p 
                 className="form-guide warning"
@@ -38,22 +57,23 @@ function Login() {
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                htmlFor={"user_pw"}
+                htmlFor={"pw"}
                 text={"비밀번호"}
               />
               <Input
-                id={"user_pw"}
-                name={""}
+                id={"pw"}
                 className={"form-input"}
                 type={"password"}
                 required={true}
+                name={"pw"}
+                value={pw}
+                onChange={valueChange}
               />
             </li>
           </ul>
         </form>
         <div className="Buttons inner40">
             <ButtonIcon 
-              id={"LoginBtn"}
               onClick={LoginCheck}
               className={"Btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
@@ -62,13 +82,20 @@ function Login() {
             />
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
+
+
+        <button onClick={openDialog}>컨피그 열려라</button>
      </div>
   )
 }
 
 //로그인 체크
-export const LoginCheck = (e) => {
-  if(USER_ID.value === "admin") {
+function LoginCheck(){
+  const USER_EMAIL = document.querySelector("#user_email");
+  const USER_PW = document.querySelector("#user_pw");
+  let GUIDE = document.querySelector(".form-guide");
+
+  if(USER_EMAIL.value === "admin"){
     if(USER_PW.value === "1234"){
       alert("로그인 성공");
     } else {
@@ -81,6 +108,12 @@ export const LoginCheck = (e) => {
 }
 
 
+
+// 컨피그 열기 테스트
+function openDialog(e) {
+  const dialog = document.querySelector(".Dialog");
+  dialog.showModal();
+ }
 
 export default Login;
 

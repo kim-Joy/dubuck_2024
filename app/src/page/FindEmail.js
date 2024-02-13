@@ -1,15 +1,36 @@
+import React, { useState } from 'react';
 
 import {HeaderTitle} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
-import {Input, Label, SelectEmail} from "components/Atom/Form";
-import Security from "components/Organisms/Security";
-
-
+import {Input, Label} from "components/Atom/Form";
+import {SelectEmail} from "components/Atom/Select";
+import {Security} from "components/Organisms/Security";
+ 
 const EMAIL_INPUT = document.querySelector(".email-input");
 const SELECT_BTN = document.querySelector(".select-btn");
 const SECURITY_GROUP = document.querySelector(".security-group");
+const EMAIL_ETC = document.querySelector("#email_etc");
+
+  
+  
 
 function FindEmail() {
+  
+  // input state
+  const [inputs, setinputs] = useState({
+    email_id : "",
+    email_etc : ""
+   });
+   const {
+    email_id,email_etc
+   } = inputs;
+  const valueChange = (e) => {
+    setinputs({
+      ...inputs,
+      [e.target.name]: e.target.value
+    });
+  }
+
 
   return(
      <div className="FindEmil">
@@ -22,13 +43,16 @@ function FindEmail() {
               <div>
                 <Label 
                   className={"form-label"}
-                  htmlFor={"email"}
+                  htmlFor={"email_id"}
                   text={"이메일"}
                 />
                 <Input
-                  id={"email"}
+                  id={"email_id"}
                   className={"form-input email-input"}
                   type={"text"}
+                  name={"email_id"}
+                  value={email_id}
+                  onChange={valueChange}
                 />
               </div>
               <span>@</span>
@@ -50,13 +74,15 @@ function FindEmail() {
                   className={"form-input full email-etc"}
                   type={"text"}
                   placeholder={"직접 입력해주세요."}
+                  name={"email_etc"}
+                  value={email_etc}
+                  onChange={valueChange}
                 />
             </li>
-            <li className="form-item">
+            <li className="form-item">  
               <Security />
             </li>
           </ul>
-
         </form>
         <div className="Buttons inner20">
           <Button 
@@ -71,19 +97,18 @@ function FindEmail() {
 }
 
 
+
 //이메일인증 체크
 export const EmailCheck = (e) => {
-  if(EMAIL_INPUT.value.length > 0) {
-    if(SELECT_BTN.value === "선택하세요."){
-      alert("이메일 선택하세요.")
+    if(EMAIL_INPUT.value.length > 0) {
+      if(SELECT_BTN.value === "선택하세요."){
+        //alert("이메일 선택하세요.");
+        SECURITY_GROUP.style.display = 'flex';
     } else {
-      SECURITY_GROUP.style.display = 'flex';
+      alert("이메일을 입력하세요.")
     }
-  } else {
-    alert("이메일을 입력하세요.")
   }
+
 }
-
-
 
 export default FindEmail;

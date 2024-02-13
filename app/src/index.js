@@ -8,12 +8,14 @@ import FindEmail from "page/FindEmail";
 import Policy from "page/Policy";
 import Marketing from "page/Marketing";
 import NotFound from "page/NotFound";
+import Confirm from "components/Organisms/Confirm"
 
 import 'styles/scss/include.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+    <Confirm />
     <Routes>
       <Route path="/"  element={<Intro />}></Route>
       <Route path="/Login" element={<Login />}></Route>
@@ -22,8 +24,7 @@ root.render(
       <Route path="/Policy" element={<Policy />}></Route>
       <Route path="/Marketing" element={<Marketing />}></Route>
       <Route path="/*" element={<NotFound />}></Route>
-      
-      </Routes>
+    </Routes>
   </BrowserRouter>
 );
 

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 // button 
 const Button = (props) => {
   
-  let [IsDisabled, setIsDisabled] = useState(false);
   
   return (
     <button 
@@ -11,8 +10,7 @@ const Button = (props) => {
       id={props.id}
       className={props.className} 
       onClick={props.onClick}
-      defaultValue={props.value}
-      disabled = {false}
+      disabled = {props.disabled}
 
     ><span className={props.classSpan}>{props.text}</span>
     </button>
@@ -21,8 +19,6 @@ const Button = (props) => {
 
 // button icon 조합
 const ButtonIcon = (props) => {
-  
-  let [IsDisabled, setIsDisabled] = useState(false);
 
   return (
     <button 
@@ -30,7 +26,7 @@ const ButtonIcon = (props) => {
       id={props.id}
       className={props.className} 
       onClick={props.onClick}
-      disabled={false}
+      disabled={props.disabled}
     >
       <span className={props.classSpan}>{props.text}</span>
       <i className={props.classI}><span className="visuallyhidden">아이콘</span></i>

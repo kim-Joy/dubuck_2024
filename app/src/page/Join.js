@@ -1,14 +1,35 @@
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import {HeaderTitle} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
-import {Input, Label, CheckBox, SelectEmail} from "components/Atom/Form";
+import {Input, Label, CheckBox} from "components/Atom/Form";
+import {SelectEmail} from "components/Atom/Select";
+
 import Policy from 'page/Policy';
 
 
-  //약관동의 체크 
- // const allCheck = document.querySelector('#all_check');
 function Join() {
+
+    // input state
+    const [inputs, setinputs] = useState({
+      family_name: "",
+      middle_name: "",
+      email_id : "",
+      email_etc : "",
+      pw: "",
+      pw2 : ""  
+     });
+
+     const {
+      family_name,middle_name,email_id,email_etc,pw,pw2
+     } = inputs;
+    const valueChange = (e) => {
+      setinputs({
+        ...inputs,
+        [e.target.name]: e.target.value
+      });
+    }
   
   return(
      <div className="Join">
@@ -21,29 +42,34 @@ function Join() {
               <div>
                 <Label 
                   className={"form-label"}
-                  htmlFor={"user_first"}
+                  htmlFor={"family_name"}
                   text={"성"}
                 />
                 <Input
-                  id={"user_first"}
+                  id={"family_name"}
                   className={"form-input"}
                   type={"text"}
                   required={true}
+                  name={"family_name"}
+                  value={family_name}
+                  onChange={valueChange}
                 />
               </div>
               <span>/</span>
               <div>
                 <Label 
                   className={"form-label"}
-                  htmlFor={"user_name"}
+                  htmlFor={"middle_name"}
                   text={"이름"}
                 />
                 <Input
-                  id={"user_name"}
-                  name={""}
+                  id={"middle_name"}
                   className={"form-input"}
                   type={"text"}
                   required={true}
+                  name={"middle_name"}
+                  value={middle_name}
+                  onChange={valueChange}
                 />
               </div>
             </li>
@@ -51,14 +77,17 @@ function Join() {
               <div>
                 <Label 
                   className={"form-label"}
-                  htmlFor={"email"}
+                  htmlFor={"email_id"}
                   text={"이메일"}
                 />
                 <Input
-                  id={"email"}
+                  id={"email_id"}
                   className={"form-input"}
                   type={"text"}
                   required={true}
+                  name={"email_id"}
+                  value={email_id}
+                  onChange={valueChange}
                 />
               </div>
               <span>@</span>
@@ -68,42 +97,49 @@ function Join() {
                   htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
-                <SelectEmail 
-                  text={"선택하세요."}
+                <SelectEmail
                 />
               </div>
               <Input
                   className={"form-input full"}
                   type={"text"}
                   plceholder={"직접 입력해주세요."}
+                  name={"email_etc"}
+                  value={email_etc}
+                  onChange={valueChange}
                 />
             </li>
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                htmlFor={"user_pw"}
+                htmlFor={"pw"}
                 text={"비밀번호"}
               />
               <Input
                 id={"user_pw"}
-                name={""}
                 className={"form-input"}
                 type={"password"}
                 required={true}
+                name={"pw"}
+                value={pw}
+                onChange={valueChange}
               />
               <p className="form-guide">영문+숫자 조합 6자리 이상 입력하세요.</p>
             </li>
             <li className="form-item">
               <Label 
                 className={"form-label"}
-                htmlFor={"user_pw2"}
+                htmlFor={"pw2"}
                 text={"비밀번호 확인"}
               />
               <Input
-                id={"user_pw2"}
+                id={"pw2"}
                 className={"form-input"}
                 type={"password"}
                 required={true}
+                name={"pw2"}
+                value={pw2}
+                onChange={valueChange}
               />
               <p className="form-guide warning">비밀번호가 일치하지 않습니다.</p>
             </li>

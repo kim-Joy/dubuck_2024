@@ -17,9 +17,9 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     background-repeat: no-repeat;
-    -webkit-mask-size: 7px 10px;
-    mask-size: 7px 10px;
-    background-size: 7px 10px;
+    -webkit-mask-size: 24px 24px;
+    mask-size: 24px 24px;
+    background-size: 24px 24px;
     -webkit-mask-position: right center;
     mask-position: right center;
     background-position: right center;
@@ -175,7 +175,7 @@
   }
   .body {
     padding: 40px 0 50px;
-    .desc {
+    .message {
       font-size: 14px;
       color: $black;
       line-height: 1.2;
