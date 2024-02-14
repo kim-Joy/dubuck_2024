@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import {Header, Header_title, Header_logo} from "components/Organisms/Header";
-import {Button, Btn_text,Btn_icon} from "components/Atom/Button";
+import {Header} from "components/Organisms/Header";
+import {Button} from "components/Atom/Button";
 import {Input, Label, CheckBox} from "components/Atom/Form";
 import {SelectEmail} from "components/Atom/Select";
 
@@ -33,10 +33,9 @@ function Join() {
   
   return(
      <div className="Join">
-        <Header>
-          <Header_title 
-            title={"회원가입"}
-          />
+        <Header
+          title={"회원가입"}
+        >
         </Header>
         <form action="">
           <ul className="form inner20">
@@ -183,12 +182,10 @@ function Join() {
           </section>
           <div className="Buttons inner20">
             <Button 
-                className={"Btn full fill-orange radius-20 h-50"}
-            >
-              <Btn_text 
-                className={"txt-white font-18"}
+                className={"Btn full fill-orange radius-20 h-50"}                
+                classSpan={"txt-white font-18"}
                 text={"가입하기"}
-              />
+            >
             </Button>
           </div>
         </form>

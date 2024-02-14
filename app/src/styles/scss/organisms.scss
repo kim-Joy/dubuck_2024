@@ -205,69 +205,119 @@
 
 /* 아이템 리스트 _종류별 */
 .list-group {
-  &.calendar { 
-    justify-content: space-evenly;
-    gap: 15px 15px;
-    margin-top: -110px;
-    .item {
-      &:nth-child(2n + 1){
-        align-self: self-start;
-      }
-      &:nth-child(2n) button{
-        text-align: left;
-      }
-    }
-    button {
+  li {
+    max-width: 160px; max-height: 160px;
+    aspect-ratio: 1/1;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    .btn {
       display: block;
-      width: 160px; height: 160px;
-      padding: 20px 30px;
+      width: 100%; height: 100%;
+      color: $white;
+      font-size:32px;
+      font-family: $font_kr;
+      font-weight: 700;
+      text-align: left;
+    }
+    
+  }
+  &.calendar { 
+    justify-content: flex-end;
+    margin-top: -80px;
+    text-align: right;
+    container: category_item / inline-size;
+    .btn {
+      max-width: 160px; max-height: 160px;
+      padding: 52px 30px 20px 30px;
       border-radius: 20px;
-      text-align: right;
-      strong {
-        display: block;
+      background-color: $gray_24;
+      p {
         color: $white;
+        font-size: 14px;
+      }
+      strong {
         font-size:32px;
         font-family: $font_kr;
         font-weight: 700;
-      } 
+        color: $white;
+      }
     }
-    & .item-calendar{
-        padding: 52px 30px 20px 30px;
-        background : {
-        color: $gray_24;
+    &:before {
+      content: '';
+      position: absolute; 
+      z-index: 1;
+      top: -14px; left: 0;
+      width: 160px; height: 40px; 
+      background: {
         image: url($url + "icon/calendar_head.svg");
         repeat: no-repeat;
         size: contain;
-        position: top -10px center;
-    }
-    }
-    & .item-word{
-      background : {
-      color: $grape_61;
-      image: url($url + "icon/book.svg");
-      repeat: no-repeat;
-      size: 24px 24px;
-      position: bottom 20px left 20px;
-      }
-    }
-    & .item-exam{
-      background : {
-      color: $orange;
-      image: url($url + "icon/exam.svg");
-      repeat: no-repeat;
-      size: 24px 24px;
-      position: bottom 20px right 30px;
-      }
-    }
-    & .item-result{
-      background : {
-      color: $red_f6;
-      image: url($url + "icon/flag.svg");
-      repeat: no-repeat;
-      size: 24px 24px;
-      position: bottom 20px left 20px;
       }
     }
   } 
+  &.category {
+    container: category_item / inline-size;
+     .item{
+        position: relative;
+        background-size: 24px 24px;
+        &:nth-child(odd) {
+          .btn {
+            text-align: right;
+          }
+        }
+        &.item-word {
+          background: {
+            color: $grape_61;
+            image: url($url + "icon/book.svg");
+            repeat: no-repeat;
+            position: bottom 20px left 20px;
+          }
+        }
+        &.item-exam {
+          background: {
+            color: $orange;
+            image: url($url + "icon/exam.svg");
+            repeat: no-repeat;
+            position: bottom 20px right 20px;
+          }
+        }
+        &.item-result {
+          background: {
+            color: $red_f6;
+            image: url($url + "icon/flag.svg");
+            repeat: no-repeat;
+            position: bottom 20px left 20px;
+          }
+        }
+        
+    }
+  }
+}
 
+
+/* 컨테이너 쿼리 _ 카테고리 영역*/
+@container category_item (max-width: 325px) {
+  .calendar {
+    .box {
+      width: calc(50% - 8px);
+    }
+    li{ 
+      width: calc(50% - 8px);
+    }; 
+  }
+}
+
+@container category_item (max-width: 302px) {
+  .calendar {
+    p {
+      font-size: 12px;
+    }
+    .count {
+      font-size: 24px;
+    }
+    li{
+      font-size: 24px;
+    }
+  }
 }

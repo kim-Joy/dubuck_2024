@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import {Input, Label} from "components/Atom/Form";
-import {Button, Btn_text,Btn_icon} from "components/Atom/Button";
+import {Button} from "components/Atom/Button";
 
 import Big from "components/Organisms/Big";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
@@ -76,15 +76,12 @@ function Login() {
           <Link to="/Main">
             <Button 
               onClick={LoginCheck}
+              icon={true}
               className={"Btn full fill-orange radius-20 h-50 icon"}
+              classSpan={"txt-white font-18"}
+              text={"로그인"}
             >
-              <Btn_text 
-                className={"txt-white font-18"}
-                text={"로그인"}
-              />
-              <Btn_icon 
-                className={"arrow"}
-              />
+
             </Button >
           </Link>
         </div>

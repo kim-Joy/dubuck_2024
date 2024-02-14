@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, ButtonIcon} from "components/Atom/Button";
+import {Button} from "components/Atom/Button";
 
 
 function Confirm({children}) {
