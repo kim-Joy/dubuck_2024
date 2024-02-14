@@ -27,7 +27,7 @@ function Login() {
   }
   
   return(
-     <div className="Login">
+     <div className="login">
         <Big />
         <form action="">
           <ul className="form inner40">
@@ -72,12 +72,12 @@ function Login() {
             </li>
           </ul>
         </form>
-        <div className="Buttons inner40">
+        <div className="btn-group inner40">
           <Link to="/Main">
             <Button 
               onClick={LoginCheck}
               icon={true}
-              className={"Btn full fill-orange radius-20 h-50 icon"}
+              className={"btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
               text={"로그인"}
             >

@@ -5,11 +5,7 @@ import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
 import {SelectEmail} from "components/Atom/Select";
 import {Security} from "components/Organisms/Security";
- 
-const EMAIL_INPUT = document.querySelector(".email-input");
-const SELECT_BTN = document.querySelector(".select-btn");
-const SECURITY_GROUP = document.querySelector(".security-group");
-const EMAIL_ETC = document.querySelector("#email_etc");
+
 
   
   
@@ -33,7 +29,7 @@ function FindEmail() {
 
 
   return(
-     <div className="FindEmil">
+     <div className="find-email">
         <Header 
           title={"계정찾기"}
         >
@@ -57,7 +53,7 @@ function FindEmail() {
                   onChange={valueChange}
                 />
               </div>
-              <span>@</span>
+              <span className="mark">@</span>
               <div>
                 <Label 
                   className={"indent form-label"}
@@ -81,15 +77,15 @@ function FindEmail() {
                   onChange={valueChange}
                 />
             </li>
-            <li className="form-item">  
+            <li className="form-item ">  
               <Security />
             </li>
           </ul>
         </form>
-        <div className="Buttons inner20">
+        <div className="btn-group inner20">
           <Button 
             onClick={EmailCheck}
-            className={"Btn full fill-orange radius-20 h-50"}
+            className={"btn full fill-orange radius-20 h-50"}
             classSpan={"txt-white font-18"}
             text={"인증번호 발송"}
           >
@@ -103,14 +99,21 @@ function FindEmail() {
 
 //이메일인증 체크
 export const EmailCheck = (e) => {
-    if(EMAIL_INPUT.value.length > 0) {
+   
+const EMAIL_INPUT = document.querySelector(".email-input");
+const SELECT_BTN = document.querySelector(".select-btn");
+const SECURITY_GROUP = document.querySelector(".security-group");
+const EMAIL_ETC = document.querySelector("#email_etc");
+
+  SECURITY_GROUP.style.display = 'grid';
+   /* if(EMAIL_INPUT.value.length > 0) {
       if(SELECT_BTN.value === "선택하세요."){
         //alert("이메일 선택하세요.");
         SECURITY_GROUP.style.display = 'flex';
     } else {
       alert("이메일을 입력하세요.")
     }
-  }
+  }*/
 
 }
 

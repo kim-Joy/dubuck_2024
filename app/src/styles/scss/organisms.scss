@@ -39,14 +39,15 @@
 .Big {
   & .group {
     max-height: 300px;
-    padding: 62px 30px 123px 60px;
+    padding: 60px 40px 120px 60px;
     box-sizing: border-box;
-    border-radius: 80px;
-    border-bottom-right-radius: 0;
+    border: {
+      radius: 80px;
+      bottom-right-radius: 0;
+    }
     background-color: $orange;
-    
-    .dubuck_logo {
-      width: 62px; height: 50px;
+    .logo {
+      width: 50px; height: 26px;
       background: {
         image: url($url + "common/logo.png");
         size: contain;
@@ -64,9 +65,8 @@
     p {
       margin-top: 8px;
       color: $black;
-      font: {
-        size: 16px;  
-    }}
+      font-size: 16px;  
+    }
   }
   .dubuck_symbolon {
     max-width: 100%;
@@ -76,17 +76,17 @@
 }
 
 .security-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  .form-input {
-    width: 120px;
-  }
-  .Btn {
-    width: calc(100% - 128px);
+  grid-template-columns: 120px 1fr;
+  @include grid(
+    grid,
+    $wrap: wrap,
+    $justify_con: space-between
+  );
+  .btn {
     margin-left: 8px;
   }
   .form-guide {
+    grid-column: 1 / span 3;
     width: 100%; 
     text-align: right;
     white-space: pre-line;

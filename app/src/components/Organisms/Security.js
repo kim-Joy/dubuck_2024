@@ -17,7 +17,7 @@ const Security = (props) => {
           />
           <Button 
             onClick={securityChcek}
-            className={"Btn fill-gray-49 radius-5 h-50"}
+            className={"btn fill-gray-49 radius-5 h-50"}
             classSpan={"txt-white"}
             text={"인증번호 확인"}
           />

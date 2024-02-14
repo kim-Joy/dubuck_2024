@@ -24,6 +24,7 @@ function Join() {
      const {
       family_name,middle_name,email_id,email_etc,pw,pw2
      } = inputs;
+
     const valueChange = (e) => {
       setinputs({
         ...inputs,
@@ -32,7 +33,7 @@ function Join() {
     }
   
   return(
-     <div className="Join">
+     <div className="join">
         <Header
           title={"회원가입"}
         >
@@ -56,7 +57,7 @@ function Join() {
                   onChange={valueChange}
                 />
               </div>
-              <span>/</span>
+              <span className="mark">/</span>
               <div>
                 <Label 
                   className={"form-label"}
@@ -75,28 +76,28 @@ function Join() {
               </div>
             </li>
             <li className="form-item horizontal">
+              <div className="grid">
+                <Label 
+                    className={"form-label"}
+                    htmlFor={"email_id"}
+                    text={"이메일"}
+                  />
+                  <Input
+                    id={"email_id"}
+                    className={"form-input"}
+                    type={"text"}
+                    required={true}
+                    name={"email_id"}
+                    value={email_id}
+                    onChange={valueChange}
+                  />
+              </div>              
+              <span className="mark">@</span>
               <div>
                 <Label 
-                  className={"form-label"}
-                  htmlFor={"email_id"}
-                  text={"이메일"}
-                />
-                <Input
-                  id={"email_id"}
-                  className={"form-input"}
-                  type={"text"}
-                  required={true}
-                  name={"email_id"}
-                  value={email_id}
-                  onChange={valueChange}
-                />
-              </div>
-              <span>@</span>
-              <div>
-                <Label 
-                  className={"indent form-label"}
-                  htmlFor={"email_adress"}
-                  text={"이메일 주소"}
+                    className={"indent form-label"}
+                    htmlFor={"email_adress"}
+                    text={"이메일 주소"}
                 />
                 <SelectEmail
                 />
@@ -145,7 +146,8 @@ function Join() {
               <p className="form-guide warning">비밀번호가 일치하지 않습니다.</p>
             </li>
           </ul>
-          <section className="agreeSection inner20">
+
+          <section className="section-agree inner20">
             <h3>약관동의</h3>
             <ul>
               <li>
@@ -180,9 +182,9 @@ function Join() {
               </li>
             </ul>
           </section>
-          <div className="Buttons inner20">
+          <div className="btn-group inner20">
             <Button 
-                className={"Btn full fill-orange radius-20 h-50"}                
+                className={"btn full fill-orange radius-20 h-50"}                
                 classSpan={"txt-white font-18"}
                 text={"가입하기"}
             >

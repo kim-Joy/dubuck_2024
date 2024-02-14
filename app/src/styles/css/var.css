@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*  변수
+==================================== */
+/*  공통 
+==================================== */
 .visuallyhidden {
   position: absolute;
   width: 1px;
@@ -29,6 +34,11 @@
   box-sizing: border-box;
 }
 
+/* width */
+.w.full {
+  width: 100%;
+}
+
 /* height */
 .h-50 {
   height: 50px;
@@ -51,6 +61,7 @@
   border-radius: 20px;
 }
 
+/* font size */
 .font-18 {
   font-size: 18px;
 }

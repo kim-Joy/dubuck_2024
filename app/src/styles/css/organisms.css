@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*  변수
+==================================== */
+/*  공통 
+==================================== */
 .visuallyhidden {
   position: absolute;
   width: 1px;
@@ -29,6 +34,11 @@
   box-sizing: border-box;
 }
 
+/* width */
+.w.full {
+  width: 100%;
+}
+
 /* height */
 .h-50 {
   height: 50px;
@@ -51,6 +61,7 @@
   border-radius: 20px;
 }
 
+/* font size */
 .font-18 {
   font-size: 18px;
 }
@@ -74,9 +85,9 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   background-repeat: no-repeat;
-  -webkit-mask-size: 7px 10px;
-  mask-size: 7px 10px;
-  background-size: 7px 10px;
+  -webkit-mask-size: 24px 24px;
+  mask-size: 24px 24px;
+  background-size: 24px 24px;
   -webkit-mask-position: right center;
   mask-position: right center;
   background-position: right center;
@@ -92,15 +103,15 @@
 ===================================== */
 .Big .group {
   max-height: 300px;
-  padding: 62px 30px 123px 60px;
+  padding: 60px 40px 120px 60px;
   box-sizing: border-box;
   border-radius: 80px;
   border-bottom-right-radius: 0;
   background-color: #FA7D38;
 }
-.Big .group .dubuck_logo {
-  width: 62px;
-  height: 50px;
+.Big .group .logo {
+  width: 50px;
+  height: 26px;
   background-image: url("../../assets/images/common/logo.png");
   background-size: contain;
   background-position: center center;
@@ -226,7 +237,7 @@
 .Confirm .body {
   padding: 40px 0 50px;
 }
-.Confirm .body .desc {
+.Confirm .body .message {
   font-size: 14px;
   color: #171717;
   line-height: 1.2;
@@ -242,4 +253,117 @@
 .Confirm .foot .Btn {
   width: 50%;
   max-width: 130px;
+}
+
+.list-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 아이템 리스트 _종류별 */
+.list-group li {
+  max-width: 160px;
+  max-height: 160px;
+  aspect-ratio: 1/1;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.list-group li .btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  font-size: 32px;
+  font-family: "KIMM";
+  font-weight: 700;
+  text-align: left;
+}
+.list-group.calendar {
+  justify-content: flex-end;
+  margin-top: -80px;
+  text-align: right;
+  container: category_item/inline-size;
+}
+.list-group.calendar .btn {
+  max-width: 160px;
+  max-height: 160px;
+  padding: 52px 30px 20px 30px;
+  border-radius: 20px;
+  background-color: #242424;
+}
+.list-group.calendar .btn p {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.list-group.calendar .btn strong {
+  font-size: 32px;
+  font-family: "KIMM";
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.list-group.calendar:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -14px;
+  right: 0;
+  width: 160px;
+  height: 42px;
+  background-image: url("../../assets/images/icon/calendar_head.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.list-group.category {
+  gap: 16px 0;
+  justify-content: space-between;
+  margin-top: 16px;
+  container: category_item/inline-size;
+}
+.list-group.category .item {
+  position: relative;
+  background-size: 24px 24px;
+}
+.list-group.category .item:nth-child(odd) .btn {
+  text-align: right;
+}
+.list-group.category .item.item-word {
+  background-color: #6153FF;
+  background-image: url("../../assets/images/icon/book.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 20px left 20px;
+}
+.list-group.category .item.item-exam {
+  background-color: #FA7D38;
+  background-image: url("../../assets/images/icon/exam.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 20px right 20px;
+}
+.list-group.category .item.item-result {
+  background-color: #F64848;
+  background-image: url("../../assets/images/icon/flag.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 20px left 20px;
+}
+
+/* 컨테이너 쿼리 _ 카테고리 영역*/
+@container category_item (max-width: 325px) {
+  .calendar .box {
+    width: calc(50% - 8px);
+  }
+  .calendar li {
+    width: calc(50% - 8px);
+  }
+}
+@container category_item (max-width: 302px) {
+  .calendar p {
+    font-size: 12px;
+  }
+  .calendar .count {
+    font-size: 24px;
+  }
+  .calendar li {
+    font-size: 24px;
+  }
 }

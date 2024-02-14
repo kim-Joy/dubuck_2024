@@ -1,3 +1,5 @@
+/*  변수
+==================================== */
 $font_kr: "KIMM";
 $font_en: "SpaceGrotesk";
 
@@ -22,6 +24,11 @@ $gray_24 : #242424;
 
 $url : "../../assets/images/";
 
+
+
+
+/*  공통 
+==================================== */
 .visuallyhidden {
   position: absolute; 
   width: 1px;
@@ -41,7 +48,12 @@ $url : "../../assets/images/";
 
 
 
-
+/* width */
+.w {
+  &.full {
+    width: 100%;
+  }
+}
 
 
 /* height */
@@ -68,14 +80,9 @@ $url : "../../assets/images/";
   }
 }
 
-
+/* font size */
 .font {
   &-18 {
     font-size: 18px;
   }
 }
-
-
-
-
-

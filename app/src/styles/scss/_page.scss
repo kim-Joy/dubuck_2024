@@ -1,52 +1,53 @@
 #wrapper {
   width: 100%; height: 100vh;
   background-color: #f7f8f9;
+  #root {
+    background-color: #fff;
+    font: {
+      family: $font_kr;
+      size: 14px;
+      weight: 300;
+    }  
+      color: $black;
+  }
 }
 
-#root {
-  font: {
-    family: $font_kr;
-    size: 14px;
-    weight: 300;
-  }  
-    color: $black;
-}
-
-.Intro {
-  .buttons {
+/*  page 별
+==================================== */
+.intro {
+  .btn-group {
     margin-top: 90px;
   }
 }
 
-.Join {
-  .agreeSection {
+.join {
+  .section-agree {
     margin-top: 24px;
   }
 }
 
-.Login {
+.login {
   .form-utill {
     margin-top: 8px; 
     text-align: center; 
     color: $gray_68;
-    font: {
-      size: 10px;
-    }
+    font-size: 10px;
   }
 }
 
-.FindEmil {
+.find-email {
   .form-item + .form-item {
-    margin-top: 0;
+    margin-top: 4px;
   }
   .security-group {
-    margin-top: 8px;
+    margin-top: 4px;
     display: none;
   }
 }
 
 
-
+/*  미디어 쿼리
+==================================== */
 @media (min-width: 425px) {
   .mockup {
     position: absolute; 
@@ -63,8 +64,5 @@
     overflow-y: auto;
     -ms-overflow-style: none; 
     scrollbar-width: none;
-  }
-  &::-webkit-scrollbar {
-    display: none;
   }
 }

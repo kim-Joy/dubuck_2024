@@ -5,12 +5,12 @@ import {Button} from "components/Atom/Button";
 
 function Intro() {
   return(
-     <div className="Intro">
+     <div className="intro">
         <Big />
-        <div className="Buttons inner40">
+        <div className="btn-group inner40">
         <Link to="/Login" key="Login" >
             <Button 
-              className={"Btn full fill-orange radius-20 h-50 icon"}
+              className={"btn full fill-orange radius-20 h-50 icon"}
               icon={true}
               classSpan={"txt-white font-18"}
               text={"로그인"}
@@ -19,7 +19,7 @@ function Intro() {
           </Link>
           <Link to="/Join" key="Join">
             <Button 
-              className={"Btn full border border-orange radius-20 h-50 icon"} 
+              className={"btn full border border-orange radius-20 h-50 icon"} 
               icon={true}
               classSpan={"txt-orange font-18"}
               text={"이메일로 가입"}
