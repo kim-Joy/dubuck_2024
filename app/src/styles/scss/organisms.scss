@@ -247,16 +247,20 @@
       content: '';
       position: absolute; 
       z-index: 1;
-      top: -14px; left: 0;
-      width: 160px; height: 40px; 
+      top: -14px; right: 0;
+      width: 160px; height: 42px; 
       background: {
         image: url($url + "icon/calendar_head.svg");
         repeat: no-repeat;
-        size: contain;
+        size: cover;
+        position: top center;
       }
     }
   } 
   &.category {
+    gap: 16px 0;
+    justify-content: space-between;
+    margin-top: 16px;
     container: category_item / inline-size;
      .item{
         position: relative;

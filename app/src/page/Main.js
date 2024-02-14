@@ -24,7 +24,7 @@ function Main() {
             </button>
           </Link>
         </div>
-        <ul className="list-group category inner20">
+        <ul className="list-group category">
           {calendar_item.map((item) =>(
             <li className={`item ${item.className}` }>
               <Link to={item.to}>
