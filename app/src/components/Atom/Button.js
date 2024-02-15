@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // button 
 const Button = (props, {children}) => {
-
+  
   return(
     <button 
       className={props.className}
@@ -11,7 +11,7 @@ const Button = (props, {children}) => {
       onClick={props.onClick}
       disabled = {props.disabled}
     >
-      {props.icon === true && (
+      {props.className.includes('icon') && (
         <i className="arrow"><span className="visuallyhidden">아이콘</span></i>
       )} 
       <span 
@@ -23,6 +23,7 @@ const Button = (props, {children}) => {
   )
 
 }
+
 
 
 export {Button};

@@ -76,12 +76,10 @@ function Login() {
           <Link to="/Main">
             <Button 
               onClick={LoginCheck}
-              icon={true}
               className={"btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
               text={"로그인"}
             >
-
             </Button >
           </Link>
         </div>
