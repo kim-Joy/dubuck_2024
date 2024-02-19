@@ -16,11 +16,9 @@ function Main() {
       <div className="inner20">
         <div className="list-group calendar">
           <Link to="/">
-            <button 
-              className="btn"
-            >
+            <button className="btn">
               <p>이달의 출결 수</p>
-              <strong>31<em>일차</em></strong>
+              <strong><em>31</em>일차</strong>
             </button>
           </Link>
         </div>

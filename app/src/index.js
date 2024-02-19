@@ -9,6 +9,7 @@ import Policy from "page/Policy";
 import Marketing from "page/Marketing";
 import Main from "page/Main";
 import Result from "page/Result";
+import Result_View from "page/Result_View";
 import NotFound from "page/NotFound";
 
 import 'styles/scss/include.scss';
@@ -24,6 +25,7 @@ root.render(
 
       <Route path="/Main" element={<Main />}></Route>
       <Route path="/Result" element={<Result />}></Route>
+      <Route path="/Result_View" element={<Result_View />}></Route>
 
       <Route path="/Policy" element={<Policy />}></Route>
       <Route path="/Marketing" element={<Marketing />}></Route>
