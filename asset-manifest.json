@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/dubuck_2024/static/css/main.f0c3ccd2.css",
+    "main.js": "/dubuck_2024/static/js/main.86210d7a.js",
+    "static/media/KIMM_bold.woff2": "/dubuck_2024/static/media/KIMM_bold.ec59780b4493e25242c2.woff2",
+    "static/media/KIMM_Light.ttf": "/dubuck_2024/static/media/KIMM_Light.ca86f545b13cffa9e2c8.ttf",
+    "static/media/KIMM_bold.ttf": "/dubuck_2024/static/media/KIMM_bold.e2c9f2e4cb62ca27fea5.ttf",
+    "static/media/KIMM_Light.woff2": "/dubuck_2024/static/media/KIMM_Light.5349e676ef98a11748af.woff2",
+    "static/media/KIMM_bold.woff": "/dubuck_2024/static/media/KIMM_bold.6334bd6a4e950095edf9.woff",
+    "static/media/KIMM_Light.woff": "/dubuck_2024/static/media/KIMM_Light.3c9b13e573185a9315ce.woff",
+    "static/media/SpaceGrotesk-Light.ttf": "/dubuck_2024/static/media/SpaceGrotesk-Light.5c62fc20689f43f24f44.ttf",
+    "static/media/SpaceGrotesk-Medium.ttf": "/dubuck_2024/static/media/SpaceGrotesk-Medium.dff8d806ce24db6ac483.ttf",
+    "static/media/SpaceGrotesk-Regular.ttf": "/dubuck_2024/static/media/SpaceGrotesk-Regular.67fa42510e26f5d4733d.ttf",
+    "static/media/SpaceGrotesk-SemiBold.ttf": "/dubuck_2024/static/media/SpaceGrotesk-SemiBold.b294a56ead28c272c9b1.ttf",
+    "static/media/SpaceGrotesk-Bold.ttf": "/dubuck_2024/static/media/SpaceGrotesk-Bold.96e001703fcc4898de0e.ttf",
+    "static/media/SpaceGrotesk-SemiBold.woff2": "/dubuck_2024/static/media/SpaceGrotesk-SemiBold.d313659469ec343ef5d6.woff2",
+    "static/media/SpaceGrotesk-Bold.woff2": "/dubuck_2024/static/media/SpaceGrotesk-Bold.07c55da854944b39d2db.woff2",
+    "static/media/SpaceGrotesk-Regular.woff2": "/dubuck_2024/static/media/SpaceGrotesk-Regular.b255b4d822eb900851b4.woff2",
+    "static/media/SpaceGrotesk-Medium.woff2": "/dubuck_2024/static/media/SpaceGrotesk-Medium.584c254859b177aec962.woff2",
+    "static/media/SpaceGrotesk-Light.woff2": "/dubuck_2024/static/media/SpaceGrotesk-Light.c4e0f30c44be4990542b.woff2",
+    "static/media/SpaceGrotesk-Regular.woff": "/dubuck_2024/static/media/SpaceGrotesk-Regular.d8b17e8f94a317530504.woff",
+    "static/media/SpaceGrotesk-Medium.woff": "/dubuck_2024/static/media/SpaceGrotesk-Medium.7a7144dc58f1df858fed.woff",
+    "static/media/SpaceGrotesk-SemiBold.woff": "/dubuck_2024/static/media/SpaceGrotesk-SemiBold.00f05cc167ca13d2f5eb.woff",
+    "static/media/SpaceGrotesk-Light.woff": "/dubuck_2024/static/media/SpaceGrotesk-Light.d27d4bdcd2f2103dcef1.woff",
+    "static/media/SpaceGrotesk-Bold.woff": "/dubuck_2024/static/media/SpaceGrotesk-Bold.5fd48480518064d36905.woff",
+    "static/media/dubuck.png": "/dubuck_2024/static/media/dubuck.4ccc52b7b0ead7c7272c.png",
+    "static/media/calendar_head.svg": "/dubuck_2024/static/media/calendar_head.f5653d3b0c684d288cf9.svg",
+    "static/media/book.svg": "/dubuck_2024/static/media/book.64816b2ce6ec28a11e22.svg",
+    "static/media/exam.svg": "/dubuck_2024/static/media/exam.6f3ab118325255962673.svg",
+    "index.html": "/dubuck_2024/index.html",
+    "static/media/flag.svg": "/dubuck_2024/static/media/flag.58551f2b42f4bb0e0b78.svg",
+    "static/media/arrow_round_key.svg": "/dubuck_2024/static/media/arrow_round_key.7eed5934b0720086f548.svg",
+    "static/media/close.svg": "/dubuck_2024/static/media/close.363a2550718a0cec9b24.svg",
+    "static/media/arrow_round.svg": "/dubuck_2024/static/media/arrow_round.7c0aef4c197bba840b49.svg",
+    "static/media/checked_round.svg": "/dubuck_2024/static/media/checked_round.d477ec28c652cfb43e71.svg",
+    "main.f0c3ccd2.css.map": "/dubuck_2024/static/css/main.f0c3ccd2.css.map",
+    "main.86210d7a.js.map": "/dubuck_2024/static/js/main.86210d7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0c3ccd2.css",
+    "static/js/main.86210d7a.js"
+  ]
+}
