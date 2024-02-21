@@ -60,6 +60,17 @@
   }
 }
 
+.result {
+  .list-group {
+    &.today {
+      display: block;
+      .item {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
 
 /*  미디어 쿼리
 ==================================== 

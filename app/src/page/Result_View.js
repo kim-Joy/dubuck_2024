@@ -1,16 +1,24 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import {Header} from "components/Organisms/Header";
 import {SelectEmail} from "components/Atom/Select";
+
+import {Header} from "components/Organisms/Header";
+import Plating from "components/Organisms/Plating";
+
 
 function Result_View() {
   const today_list = [
-    {key: "1", answer: 'exist', verb: '존재하다', listen: "..", my_answer: "exists", my_verb: '존재하다'  }
+    {key: "1", answer: 'exist', verb: '존재하다', listen: "..", my_answer: "exists", my_verb: '존재하다'  },
+    {key: "2", answer: 'exist', verb: '존재하다', listen: "..", my_answer: "exists", my_verb: '존재하다'  },
+    {key: "3", answer: 'exist', verb: '존재하다', listen: "..", my_answer: "exists", my_verb: '존재하다'  },
+    {key: "4", answer: 'exist', verb: '존재하다', listen: "..", my_answer: "exists", my_verb: '존재하다'  }
+
   ]
 
   return(
     <div className="result">
+
       <Header
           title={"챌린지 결과"}
         />
@@ -18,7 +26,7 @@ function Result_View() {
         <SelectEmail />
       </div>
       <section className="inner20">
-        <ul className="list-group">
+        <ul className="index-group">
           {today_list.map((item) =>(
             <li>
               <Link to={item.to}>
@@ -27,7 +35,7 @@ function Result_View() {
                   <p>{item.verb}</p>
                   <button>{item.listen}</button>
                 </div>
-                <div className="my_answer">
+                <div className="my-answer">
                   <strong>{item.my_answer}</strong>
                   <p>{item.my_verb}</p>
                 </div>
@@ -36,21 +44,8 @@ function Result_View() {
           ))}
         </ul>
       </section>
-      <div className="sticky">
-          <button type="button">
-            플러스
-          </button>
-      <ul className="">
-        <li>
-          <button>
-            채린지 재 도전
-            <span>아이콘</span>
-          </button>
-        </li>
-      </ul>  
-      <div classNmae="dim"></div>  
-      </div>
-
+      
+      <Plating />
     </div>
   )
 }

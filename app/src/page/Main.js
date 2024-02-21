@@ -8,8 +8,8 @@ function Main() {
     {key: "2", title: "영단어 공부", className: "item-word", to: "/"},
     {key: "3", title: "챌린지 시험", className: "item-exam", to: "/"},
     {key: "4", title: "챌린지 결과", className: "item-result", to: "/Result"},
-
   ]
+  
   return(
     <div className="Main">
       <Big />
