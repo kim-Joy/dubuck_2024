@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
+import {Button} from "components/Atom/Button";
+
 import Big from "components/Organisms/Big";
+import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 function Main() {
   const calendar_item = [
@@ -38,8 +41,37 @@ function Main() {
           ))}
         </ul>
       </div>
+
+      <Confirm className={"modal"}>
+        
+        <Confirm_head 
+          title={"두벅이 소리함"} 
+          close={true}
+        />
+        <Confirm_body 
+          message={"불편한점, 바라는 점등 다양한  의견을 들려주세요!"} 
+        />
+        <Confirm_foot >
+          <Link to="/Suggestion">
+          <Button 
+              className={"btn border border-whtie radius-20 h-50"}
+              classSpan={"txt-white"}
+              text={"충고하기"}
+          />
+          </Link>
+        </Confirm_foot>
+        
+      </Confirm>
+
+      <button onClick={openDialog}>소리함</button>
     </div>
   )
 }
+
+
+function openDialog(e) {
+  const dialog = document.querySelector(".Dialog");
+  dialog.showModal();
+ }
 
 export default Main;

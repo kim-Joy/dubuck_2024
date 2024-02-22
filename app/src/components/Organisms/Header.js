@@ -16,7 +16,9 @@ function Header(props){
     <header className="Header">
      {props.logo === true ?
       <Link to="/">
-        <h1>Logo</h1>
+        <h1 className="logo">
+          <span className="visuallyhidden">dubuck</span>
+        </h1>
       </Link> 
       : (
         <button className="hd-back" onClick={handleBack}>

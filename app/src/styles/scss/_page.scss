@@ -61,6 +61,15 @@
 }
 
 .result {
+  .util {
+    @include grid(
+      grid,
+      $justify_items: end
+    );
+    .select {
+      width: 80px;
+    }
+  }
   .list-group {
     &.today {
       display: block;

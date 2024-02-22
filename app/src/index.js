@@ -13,6 +13,7 @@ import Marketing from "page/Marketing";
 import Main from "page/Main";
 import Result from "page/Result";
 import Result_View from "page/Result_View";
+import Suggestion from "page/Suggestion"
 import NotFound from "page/NotFound";
 
 //react linbrary
@@ -22,6 +23,9 @@ import 'slick-carousel/slick/slick-theme.css';
 
 // 페이지 scss
 import 'styles/scss/include.scss';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -37,6 +41,7 @@ root.render(
       <Route path="/Main" element={<Main />}></Route>
       <Route path="/Result" element={<Result />}></Route>
       <Route path="/Result_View" element={<Result_View />}></Route>
+      <Route path="/Suggestion" element={<Suggestion />}></Route>
 
       <Route path="/Policy" element={<Policy />}></Route>
       <Route path="/Marketing" element={<Marketing />}></Route>

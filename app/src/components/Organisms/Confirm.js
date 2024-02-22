@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {Button} from "components/Atom/Button";
 
 
-function Confirm({children}) {
+function Confirm(props) {
   return(
      <dialog className="Dialog">
-         <section className="Confirm">
-            {children}
+         <section className={`Confirm ${props.className}`}>
+            {props.children}
          </section>
      </dialog>
   )
@@ -15,7 +15,10 @@ const Confirm_head = (props) =>{
    return(
       <div className="head">
          <h3>{props.title}</h3>
-         <button className="close-btn Confirm-Close" onClick={closeDialog}><span className="visuallyhidden">닫기</span></button>
+         {props.close === true ? "" : (
+            <button className="close-btn Confirm-Close" onClick={closeDialog}><span className="visuallyhidden">닫기</span></button>
+         )
+         }
       </div>
    )
 }
@@ -31,17 +34,7 @@ const Confirm_body = (props) => {
 const Confirm_foot= (props) =>{
    return(
       <div className="foot">
-         <Button 
-            className={"Btn fill-orange radius-20 h-40"}
-            classSpan={"txt-white"}
-            text={"확인"}
-         />
-         <Button 
-            className={"Btn fill-gray-f1 radius-20 h-40"}
-            classSpan={"txt-gray-68"}
-            text={"취소"}
-            onClick={closeDialog}
-         />
+         {props.children}
       </div>
    )
 }

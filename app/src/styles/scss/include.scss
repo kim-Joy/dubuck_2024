@@ -3,11 +3,14 @@
 @import "../css/normaulrze.css";
 @import "../css/font.css";
 
+/* 공통 */
 @import "var";
 @import "mixin";
-@import "atomic";
-@import "organisms";
 
 
 /* style */
+@import "atomic";
+@import "organisms";
+
+/* page */
 @import "_page";
