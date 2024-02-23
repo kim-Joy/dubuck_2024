@@ -29,6 +29,9 @@
     &-white {
       background-color: $white;
     }
+    &-grape-65 {
+      background-color: $grape_65;
+    }
   }
   &.border{
     background-color: transparent;
@@ -365,4 +368,22 @@
 
     }
   }
+}
+
+
+.textarea {
+  display: block; 
+  width: 100%; min-height: 232px;
+  padding: 10px 15px 20px 15px;
+  box-sizing: border-box;
+  border: 1px solid $gray_e2;
+  border-radius: 5px;
+  color: $gray_8a;
+  overflow-x: none;
+  overflow-y: auto;
+  font: {
+    size: 12px;
+    weight: 300;
+  }
+
 }

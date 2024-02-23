@@ -65,6 +65,9 @@ $url : "../../assets/images/";
   &-40 {
     height: 40px;
   }
+  &-30 {
+    height: 30px;
+  }
   &-20 {
     height: 20px;
   }
@@ -85,5 +88,8 @@ $url : "../../assets/images/";
 .font {
   &-18 {
     font-size: 18px;
+  }
+  &-16 {
+    font-size: 16px;
   }
 }

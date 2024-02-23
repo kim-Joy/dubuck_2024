@@ -9,10 +9,10 @@ import Plating from "components/Organisms/Plating";
 
 function Result_View() {
   const today_list = [
-    {key: "1", answer: 'exist', verb: '존재하다', listen: "", my_answer: "exists", my_verb: '존재하다'  },
-    {key: "2", answer: 'exist', verb: '존재하다', listen: "", my_answer: "exists", my_verb: '존재하다'  },
-    {key: "3", answer: 'exist', verb: '존재하다', listen: "", my_answer: "exists", my_verb: '존재하다'  },
-    {key: "4", answer: 'exist', verb: '존재하다', listen: "", my_answer: "exists", my_verb: '존재하다'  }
+    {key: "1", answer: 'exist', verb: '존재하다', listen: "", my_answer: "", my_verb: '살아있다' , wrong: 'wrong'},
+    {key: "2", answer: 'extreme', verb: '극단', listen: "", my_answer: "extremes", my_verb: '', wrong: 'wrong'  },
+    {key: "3", answer: 'original', verb: '원래의', listen: "", my_answer: "ORIGINAL", my_verb: '존재하다' ,wrong: '' },
+    {key: "4", answer: 'soon a after', verb: '곧이어', listen: "", my_answer: "exists", my_verb: '곧이어', wrong: '' }
 
   ]
 
@@ -38,7 +38,7 @@ function Result_View() {
                   <span className="visuallyhidden">{item.listen}</span>
                 </button>
               </div>
-              <div className="my-answer">
+              <div className={`my-answer ${item.wrong}`}>
                 <strong>{item.my_answer}</strong>
                 <p>{item.my_verb}</p>
               </div>

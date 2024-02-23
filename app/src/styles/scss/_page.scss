@@ -81,6 +81,160 @@
 }
 
 
+/* 소리함 */
+.suggestion {
+  .section-rating {
+    margin-top: 20px;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    border-bottom: 2px solid $gray_f1; 
+    h3 {
+      color: $black;
+      font: {
+        size: 18px;
+        weight: 700;
+      }
+    }
+    p {
+      margin-top: 4px;
+      color: $gray_8a;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+  }
+  .rating {
+    margin-top: 72px;
+    margin-bottom: 16px;
+  }
+  .section-form {
+    margin-top: 24px;
+    h3 {
+      margin-bottom: 8px;
+      padding: 0 4px;
+      box-sizing: border-box;
+      color: $black;
+      font: {
+        size: 14px;
+        weight: 300;
+        family: $font_kr;
+      }
+    }
+  }
+}
+
+.rating-list {
+  @include grid(
+    flex,
+    $wrap: wrap
+  );
+  li {
+    width: 33.333%
+  }
+  .rating-input:checked + .rating-label{
+    .i-rating {
+      background-color: $orange;
+      border-color: $orange;
+      &:after {
+        background-color: $white;
+      }
+    }
+  }
+  .rating-label {
+    cursor: pointer;
+    .i-rating {
+      display: block; 
+      text-align: center;
+      margin: 0 auto;
+      position: relative;
+      width: 30px; height: 30px;
+      border-radius: 100%;
+      background-color: transparent;
+      border: 1px solid $gray_8a;
+      box-sizing: border-box;
+      &:after {
+        content:''; 
+        position: absolute;
+        top: 0; left: 0; 
+        width: 30px; height: 30px;
+        background-color: $gray_8a;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        background-repeat: no-repeat;
+        -webkit-mask-size: 18px auto;
+        mask-size: 18px auto;
+        background-size: 18px auto;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+        background-position: center center;
+      }
+      &.bad:after {
+        -webkit-mask-image: url($url + "icon/face_bad.svg");
+        mask-image: url($url + "icon/face_bad.svg");
+      }
+      &.soso:after {
+        -webkit-mask-image: url($url + "icon/face_soso.svg");
+        mask-image: url($url + "icon/face_soso.svg");
+      }
+      &.good:after {
+        -webkit-mask-image: url($url + "icon/face_good.svg");
+        mask-image: url($url + "icon/face_good.svg");
+      }
+      
+    }
+    span {
+      display: block;
+      margin-top: 4px;
+      text-align: center;
+      color: $gray_8a;
+      font-size: 12px;
+    }
+  }
+}
+
+
+.word {
+  .btn-group.horizontal {
+    position: absolute; 
+    bottom: 0; left: 0;
+    width: 100%; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+    &.horizontal {
+      justify-content: space-between;
+    }
+    .btn {
+      width: 100px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.layer {
+  display: none;
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: calc(100vh - 50px);
+  background-color: $white;
+  .screen.start {
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+  }
+  &.active {
+    display: block;
+  }
+ }
+
+
+
 /*  미디어 쿼리
 ==================================== 
 @media (min-width: 425px) {

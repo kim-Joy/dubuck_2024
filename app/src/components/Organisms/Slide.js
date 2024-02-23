@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
+
 function SwipeToSlide() {
   const today_list = [
     {key: "1", data: "2023.04.27", num: "104", answer: "100", wrong: "0", to: "/Result_View", score: true, perfect: "perfect"},
@@ -30,25 +31,25 @@ function SwipeToSlide() {
       <Slider {...settings}>
         {today_list.map((item) =>(
             <li className="item">
-              <Link to={item.to}>
-                <button className="btn">
-                  <div className="count-group"> 
-                    <p className="data">{item.data}</p>
-                    <strong className="num">{item.num}</strong>
-                  </div>
-                  <p className="perfect">{item.perfect}</p>
-                  <div className="score">
-                    <dl>
-                      <dt>정답수</dt>
-                      <dd>{item.answer}</dd>
-                    </dl>
-                    <dl>
-                      <dt>오답수</dt>
-                      <dd>{item.wrong}</dd>
-                    </dl>
-                  </div>
-                </button>
-              </Link>
+              <button className="btn">
+                <div className="count-group"> 
+                  <p className="data">{item.data}</p>
+                  <Link to="/Result_View">
+                   <strong className="num">{item.num}</strong>
+                  </Link>
+                </div>
+                <p className="perfect">{item.perfect}</p>
+                <div className="score">
+                  <dl>
+                    <dt>정답수</dt>
+                    <dd>{item.answer}</dd>
+                  </dl>
+                  <dl>
+                    <dt>오답수</dt>
+                    <dd>{item.wrong}</dd>
+                  </dl>
+                </div>
+              </button>
             </li>
           ))}
       </Slider>

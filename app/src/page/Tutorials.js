@@ -6,7 +6,7 @@ import {Button} from "components/Atom/Button";
 import Big from "components/Organisms/Big";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
-function Main() {
+function Tutorials() {
   const calendar_item = [
     {key: "2", title: "영단어 공부", className: "item-word", to: "/Word"},
     {key: "3", title: "챌린지 시험", className: "item-exam", to: "/Exam"},
@@ -41,28 +41,25 @@ function Main() {
           ))}
         </ul>
       </div>
-      
-      
-      <Confirm className={"modal"}>
+
+      <Confirm className={"tutorials"}>
         
         <Confirm_head 
-          title={"두벅이 소리함"} 
+          title={"두벅이와 함께"} 
           close={true}
         />
         <Confirm_body 
-          message={"불편한점, 바라는 점등 다양한  의견을 들려주세요!"} 
+          message={"출결관리를 통해 이달에 두벅이와 공부를 몇 번 했는지 알 수 있습니다. "} 
         />
         <Confirm_foot >
-          <Link to="/Suggestion">
           <Button 
-              className={"btn border border-whtie radius-20 h-50"}
+              className={"btn fill fill-grape-65 radius-20 h-30"}
               classSpan={"txt-white"}
-              text={"충고하기"}
+              text={"다음"}
           />
-          </Link>
         </Confirm_foot>
         
-      </Confirm> 
+      </Confirm>
 
       <button onClick={openDialog}>소리함</button>
     </div>
@@ -75,4 +72,4 @@ function openDialog(e) {
   dialog.showModal();
  }
 
-export default Main;
+export default Tutorials;
