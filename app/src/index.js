@@ -16,7 +16,9 @@ import Tutorials from 'page/Tutorials';
 import Finish from "page/Finish";
 import Result from "page/Result";
 import Result_View from "page/Result_View";
+import Attendance from "page/Attendance";
 import Suggestion from "page/Suggestion"
+
 import NotFound from "page/NotFound";
 
 
@@ -43,6 +45,8 @@ root.render(
       <Route path="/FindEmail" element={<FindEmail />}></Route>
 
       <Route path="/Main" element={<Main />}></Route>
+
+      <Route path="/Attendance" element={<Attendance />}></Route>
       <Route path="/Word" element={<Word />}></Route>
       <Route path="/Finish" element={<Finish />}></Route>
 
