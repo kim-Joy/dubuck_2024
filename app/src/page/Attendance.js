@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Calendar from 'react-calendar';
+
 import {Header} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
 
 import Big from 'components/Organisms/Big';
-  
-  
+import CalendarForm from 'components/Organisms/Calendar';
 
 function Attendance() {
-  
-
 
   return(
      <div className="attendance">
@@ -25,6 +24,7 @@ function Attendance() {
               </button>
             </Link>
           </div>
+          <CalendarForm />
         </div>
      </div>
   )
