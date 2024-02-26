@@ -25,7 +25,6 @@ import NotFound from "page/NotFound";
 //react linbrary
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import 'react-calendar/dist/Calendar.css';
 
 // 페이지 scss
 import 'styles/scss/include.scss';
@@ -63,3 +62,8 @@ root.render(
   </BrowserRouter>
 );
 
+/* 
+
+새로 작업시 
+
+*/
