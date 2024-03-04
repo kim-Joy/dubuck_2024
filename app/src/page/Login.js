@@ -1,10 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 
 import {Input, Label} from "components/Atom/Form";
 import {Button} from "components/Atom/Button";
-
-import Big from "components/Organisms/Big";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
@@ -72,14 +70,12 @@ function Login() {
           </ul>
         </form>
         <div className="btn-group inner40">
-          <Link to={``}>
             <Button 
               className={"btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
               onClick={LoginCheck}
               text={"로그인"}
             />
-           </Link>
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
 
@@ -99,28 +95,32 @@ function Login() {
   )
 }
 
+//컨피그 닫기
 function closeDialog(e) {
   const dialog = document.querySelector(".Dialog");
   dialog.close();
  }
 
 //로그인 체크
-function LoginCheck(e){ 
+function LoginCheck(){ 
   const navigate = useNavigate();
-  const USER_EMAIL = document.querySelector("#email");
+  const USER_EMAIL = document.querySelector("#email").value;
   const dialog = document.querySelector(".Dialog");
-  const USER_PW = document.querySelector("#pw");
+  const USER_PW = document.querySelector("#pw").value;
   let message = document.querySelector('.message');
   let GUIDE = document.querySelector(".form-guide");
 
+  let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
-  if(USER_EMAIL.value === 'admin') {
-    if(USER_EMAIL.value === 'admin' && USER_PW.value === '1234') {
+  let admin = 'admin@naver.com';
+
+  if(regex.test(USER_EMAIL) === true) {
+    if(USER_EMAIL === admin && USER_PW === '1234') {
       console.log('로그인 성공');
-      navigate('/Main');
+      navigate("/Main");
     } else {
-      dialog.showModal();;
-      message.textContent = '비밀번호를 입력하세요.';
+      dialog.showModal();
+      message.textContent = '정보가 맞지않습니다. /n 다시 확인해주세요.';
       GUIDE.style.display = 'none';
     }
   } else {
@@ -129,6 +129,8 @@ function LoginCheck(e){
     message.textContent = '정보가 맞지않습니다. /n올바른게 입력해주세요.';
   }
 }
+
+
 
 
 
