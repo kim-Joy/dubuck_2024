@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Page route
 import Intro from "page/Intro";
-import Login from "page/Login";
 import Join from "page/Join";
 import FindEmail from "page/FindEmail";
 import Policy from "page/Policy";
@@ -39,7 +38,6 @@ root.render(
   <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route path="/"  element={<Intro />}></Route>
-      <Route path="/Login" element={<Login />}></Route>
       <Route path="/Join" element={<Join />}></Route>
       <Route path="/FindEmail" element={<FindEmail />}></Route>
 

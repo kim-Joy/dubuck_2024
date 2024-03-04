@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import {Input, Label} from "components/Atom/Form";
@@ -9,7 +9,7 @@ import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Orga
 
 
 function Login() { 
-
+  
   // input state
   const [inputs, setinputs] = useState({
     email : "",
@@ -25,10 +25,9 @@ function Login() {
       [e.target.name]: e.target.value
     });
   }
-  
+
   return(
      <div className="login">
-        <Big />
         <form action="">
           <ul className="form inner40">
             <li className="form-item">
@@ -73,58 +72,64 @@ function Login() {
           </ul>
         </form>
         <div className="btn-group inner40">
-          <Link to="/Main">
+          <Link to={``}>
             <Button 
-              onClick={LoginCheck}
               className={"btn full fill-orange radius-20 h-50 icon"}
               classSpan={"txt-white font-18"}
+              onClick={LoginCheck}
               text={"로그인"}
-            >
-            </Button >
-          </Link>
+            />
+           </Link>
         </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
 
 
-        <button onClick={openDialog}>컨피그 열려라</button>
         <Confirm>
-          <Confirm_body message={"제발 보여라"} />
+          <Confirm_body message={''} />
+          <Confirm_foot>
+            <Button 
+              className={"btn full fill-orange radius-20 h-40"}
+              classSpan={"txt-white font-14"}
+              onClick={closeDialog}
+              text={"확인"}
+            />
+          </Confirm_foot>
         </Confirm>
      </div>
   )
 }
 
+function closeDialog(e) {
+  const dialog = document.querySelector(".Dialog");
+  dialog.close();
+ }
+
 //로그인 체크
-function LoginCheck(){
-  const USER_EMAIL = document.querySelector("#user_email");
-  const USER_PW = document.querySelector("#user_pw");
+function LoginCheck(e){ 
+  const navigate = useNavigate();
+  const USER_EMAIL = document.querySelector("#email");
+  const dialog = document.querySelector(".Dialog");
+  const USER_PW = document.querySelector("#pw");
+  let message = document.querySelector('.message');
   let GUIDE = document.querySelector(".form-guide");
-/*
-  if(USER_EMAIL.value === "admin"){
-    if(USER_PW.value === "1234"){
-      alert("로그인 성공");
+
+
+  if(USER_EMAIL.value === 'admin') {
+    if(USER_EMAIL.value === 'admin' && USER_PW.value === '1234') {
+      console.log('로그인 성공');
+      navigate('/Main');
     } else {
-      alert("비밀번호를 입력하세요.");
+      dialog.showModal();;
+      message.textContent = '비밀번호를 입력하세요.';
+      GUIDE.style.display = 'none';
     }
   } else {
-    alert("이메일을 입력하세요.");
     GUIDE.style.display = 'block';
-  }*/
+    dialog.showModal();
+    message.textContent = '정보가 맞지않습니다. /n올바른게 입력해주세요.';
+  }
 }
 
 
 
-// 컨피그 열기 테스트
-function openDialog(e) {
-  const dialog = document.querySelector(".Dialog");
-  dialog.showModal();
- }
-
 export default Login;
-
-/* 
-
-1. 이메일 정규화 체크 -> 가이드 노출
-2. alert 대신 컨피그 노출
-
-*/

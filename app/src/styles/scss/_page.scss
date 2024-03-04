@@ -2,6 +2,7 @@
   width: 100%; height: 100vh;
   background-color: #f7f8f9;
   #root {
+    height: 100vh;
     background-color: #fff;
     font: {
       family: $font_kr;
@@ -15,8 +16,10 @@
 /*  page 별
 ==================================== */
 .intro {
+  height: 100%;
+  overflow:  hidden;
   .btn-group {
-    margin-top: 90px;
+    margin-top: 42px;
   }
 }
 
@@ -26,7 +29,24 @@
   }
 }
 
+.absolute-box {
+  display: block;
+  position: absolute;
+  top:0; right: 0;
+  width: 100%; height: auto;
+  background-color: $white;
+  transform: translateX(100%);
+  transition: .6s;
+&.on {
+  display: block;
+  transform: translateX(0);
+}
+}
+
 .login {
+  .form {
+    margin-top: 0;
+  }
   .form-utill {
     margin-top: 8px; 
     text-align: center; 
