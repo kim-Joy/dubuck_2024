@@ -14,7 +14,16 @@ const Screen =(props) => {
         {
         props.className.includes('full') === true 
         ? <h3>{props.title}</h3>
-        : <> {Dubuck} <p className="desc">{props.desc}</p> </>
+        : <> 
+          {Dubuck} 
+          <p className="question-num">
+            <input
+              className="num"
+              placeholder='?'
+            />
+            <span className="desc">{props.desc}</span>
+          </p> 
+          </>
         }
       </section>
       <div className="btn-group">

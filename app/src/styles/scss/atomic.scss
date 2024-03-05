@@ -177,7 +177,9 @@
       }
     }
     &:disabled,
-    &.disabled {
+    &.disabled,
+    &:read-only,
+    &.readonly {
       background-color: $gray_f1;
       color: $gray_68;
       cursor: not-allowed;

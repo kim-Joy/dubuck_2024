@@ -21,9 +21,13 @@ import Suggestion from "page/Suggestion"
 import NotFound from "page/NotFound";
 
 
+
 //react linbrary
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+//페이지 js
+import 'styles/js/var.js';
 
 // 페이지 scss
 import 'styles/scss/include.scss';

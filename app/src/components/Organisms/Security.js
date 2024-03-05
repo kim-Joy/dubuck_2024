@@ -1,30 +1,41 @@
 import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
-
+import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
 const Security = (props) => {
-
+  
       return(
-      <div className="security-group">
-          <Input 
-            className={"form-input security-num"}
-            placeholder={"인증번호"}
-            type={"password"}
-            defaultValue={props.value}
-            required={true}
-            onChange={props.onChange}
-          />
-          <Button 
-            onClick={securityChcek}
-            className={"btn fill-gray-49 radius-5 h-50"}
-            classSpan={"txt-white"}
-            text={"인증번호 확인"}
-          />
-          <p className="form-guide">
-            인증번호가 발송되었습니다.<br />발급된 인증번호를 입력하세요.
-          </p>
-      </div>
+        <div className="security">
+          <div className="security-group">
+            <Input 
+              className={"form-input security-num"}
+              placeholder={"인증번호"}
+              type={"password"}
+              defaultValue={props.value}
+              required={true}
+              onChange={props.onChange}
+            />
+            <Button 
+              onClick={securityChcek}
+              className={"btn fill-gray-49 radius-5 h-50"}
+              classSpan={"txt-white"}
+              text={"인증번호 확인"}
+            />
+            <p className="form-guide">
+              인증번호가 발송되었습니다.<br />발급된 인증번호를 입력하세요.
+            </p>
+          </div>
+          <div className="btn-group">
+            <Button 
+              className={"btn full fill-orange radius-20 h-50"}
+              classSpan={"txt-white font-18"}
+              text={"계정찾기"}
+            >
+            </Button> 
+          </div>
+        </div>
+      
     )
  
 }
@@ -36,10 +47,11 @@ const Security = (props) => {
 //인증번호 체크
 function securityChcek() {
   let GUIDE = document.querySelector(".form-guide");
-  const SECURITY_NUM = document.querySelector(".security-num").value;
+  const SECURITY_NUM = document.querySelector(".security-num");
 
-  if(SECURITY_NUM === '1234') {
+  if(SECURITY_NUM.value === '1234') {
     GUIDE.classList.remove('warning');
+    SECURITY_NUM.readOnly = true;
     GUIDE.style.display = "none";
   } else {
     console.log('false');
@@ -48,7 +60,14 @@ function securityChcek() {
   }
 }
 
+// 비밀번호 발송
+/*function emailfind(){
+  const dialog = document.querySelector(".Dialog");
+  const message = document.querySelector('.message');
 
+  dialog.showModal();
+  message.textContent = '입력한 이메일로 임시 비밀번호가 발송되었습니다.';
+} */ 
 
 
 export {Security};

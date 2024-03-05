@@ -6,8 +6,9 @@ import {Button} from "components/Atom/Button";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
+
 function Login() { 
-  
+    
   // input state
   const [inputs, setinputs] = useState({
     email : "",
@@ -22,6 +23,38 @@ function Login() {
       ...inputs,
       [e.target.name]: e.target.value
     });
+  }
+  const navigate = useNavigate();
+
+
+  //로그인 체크
+  function LoginCheck(){ 
+    const dialog = document.querySelector(".Dialog");
+    const message = document.querySelector('.message');
+    const USER_EMAIL = document.querySelector("#email").value;
+    const USER_PW = document.querySelector("#pw").value;
+    let GUIDE = document.querySelector(".form-guide");
+
+
+
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
+    let admin = 'admin@naver.com';
+
+    if(regex.test(USER_EMAIL) === true) {
+      if(USER_EMAIL === admin && USER_PW === '1234') {
+        console.log('로그인 성공');
+        navigate('/Main');
+      } else {
+        dialog.showModal();
+        message.textContent = '정보가 맞지않습니다. /n 다시 확인해주세요.';
+        GUIDE.style.display = 'none';
+      }
+    } else {
+      GUIDE.style.display = 'block';
+      dialog.showModal();
+      message.textContent = '정보가 맞지않습니다. /n올바른게 입력해주세요.';
+    }
   }
 
   return(
@@ -68,15 +101,15 @@ function Login() {
               />
             </li>
           </ul>
+          <div className="btn-group inner40">
+              <Button 
+                className={"btn full fill-orange radius-20 h-50 icon"}
+                classSpan={"txt-white font-18"}
+                onClick={LoginCheck}
+                text={"로그인"}
+              />
+          </div>
         </form>
-        <div className="btn-group inner40">
-            <Button 
-              className={"btn full fill-orange radius-20 h-50 icon"}
-              classSpan={"txt-white font-18"}
-              onClick={LoginCheck}
-              text={"로그인"}
-            />
-        </div>
         <Link to="/FindEmail"><p className="form-utill">비밀번호가 뭐였더라?</p></Link>
 
 
@@ -95,40 +128,17 @@ function Login() {
   )
 }
 
+
+
+
+
 //컨피그 닫기
 function closeDialog(e) {
   const dialog = document.querySelector(".Dialog");
   dialog.close();
  }
 
-//로그인 체크
-function LoginCheck(){ 
-  const navigate = useNavigate();
-  const USER_EMAIL = document.querySelector("#email").value;
-  const dialog = document.querySelector(".Dialog");
-  const USER_PW = document.querySelector("#pw").value;
-  let message = document.querySelector('.message');
-  let GUIDE = document.querySelector(".form-guide");
 
-  let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-
-  let admin = 'admin@naver.com';
-
-  if(regex.test(USER_EMAIL) === true) {
-    if(USER_EMAIL === admin && USER_PW === '1234') {
-      console.log('로그인 성공');
-      navigate("/Main");
-    } else {
-      dialog.showModal();
-      message.textContent = '정보가 맞지않습니다. /n 다시 확인해주세요.';
-      GUIDE.style.display = 'none';
-    }
-  } else {
-    GUIDE.style.display = 'block';
-    dialog.showModal();
-    message.textContent = '정보가 맞지않습니다. /n올바른게 입력해주세요.';
-  }
-}
 
 
 

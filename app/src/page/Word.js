@@ -8,11 +8,12 @@ import Card from 'components/Organisms/Card';
 import Screen from 'components/Organisms/Screen';
 
 const Word =() => {
-  const DESC = `오늘의 문항으로 /n 챌린지 시작해볼까?`
+  const DESC = `단어 /n 공부해볼까?`
   return (
     <div className="word">
       <Header 
         logo={true}
+        onclick={wordExit}
       />
       <Card />
       <div className="btn-group horizontal">
@@ -34,6 +35,7 @@ const Word =() => {
           desc={`${DESC}`}
         >
           <Button
+            onClick={layerClose}
             className={"btn full fill-white radius-20 h-50"}
             classSpan={"txt-orange font-18"}
             text={"START"}
@@ -45,5 +47,14 @@ const Word =() => {
   )
 } 
 
+function layerClose(){
+  const LAYER = document.querySelector('.layer');
+  LAYER.classList.remove('active');
+
+}
+
+function wordExit(){
+  console.log('sss')
+}
 
 export default Word;

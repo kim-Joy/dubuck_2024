@@ -11,7 +11,7 @@ const SelectEmail = (props) => {
     {key: "4", value: "nate.com"},
     {key: "5", value: "yahoo.com"}
   ]
-  let [IsSelected, setIsSelected] = useState('선택하세요.');
+  let [IsSelected, setIsSelected] = useState('선택하세요');
   let SELECT_BTN = document.querySelector(".select-btn");
   
   //option click

@@ -59,10 +59,13 @@
   .form-item + .form-item {
     margin-top: 4px;
   }
-  .security-group {
-    margin-top: 4px;
-    display: none;
+  .security {
+    display: none; 
+    .security-group {
+      margin-top: 4px;
+    }
   }
+ 
 }
 
 .result {

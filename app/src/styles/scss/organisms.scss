@@ -609,10 +609,31 @@
       top: -100px; left: 50%;
       transform: translate(-50%);
     }
-    .desc {
+    .question-num {
       margin-top: 60px;
+      text-align: center;
+      color: $white;
       white-space: pre-line;
+      font: {
+        size: 18px;
+        weight: 300;
+      }
+      .num {
+        width: 43px;
+        background-color: transparent;
+        border-bottom: 1px solid $white;
+        text-align: center;
+        color: $white;
+        font: {
+          size: 18px;
+          weight: 300;
+        }
+        &::placeholder {
+          color: $white;
+        }
+      }
     }
+    
 
   }
   &.full {
@@ -648,7 +669,9 @@
   
 }
 
-
+.card {
+  margin-top: 26px;
+}
 .antenna {
   max-width: 335px;
   margin: 0 auto;

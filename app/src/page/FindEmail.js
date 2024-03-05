@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 import {Header} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
 import {SelectEmail} from "components/Atom/Select";
 import {Security} from "components/Organisms/Security";
-
+import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
   
   
 
-function FindEmail() {
-  
+function FindEmail() { 
   // input state
   const [inputs, setinputs] = useState({
     email_id : "",
@@ -82,8 +82,10 @@ function FindEmail() {
             </li>
           </ul>
         </form>
+        
         <div className="btn-group inner20">
           <Button 
+            id={'submit'}
             onClick={EmailCheck}
             className={"btn full fill-orange radius-20 h-50"}
             classSpan={"txt-white font-18"}
@@ -91,30 +93,61 @@ function FindEmail() {
           >
           </Button> 
         </div>
+
+        <Confirm>
+          <Confirm_body message={''} />
+          <Confirm_foot>
+            <Button 
+              className={"btn full fill-orange radius-20 h-40"}
+              classSpan={"txt-white font-14"}
+              onClick={closeDialog}
+              text={"확인"}
+            />
+          </Confirm_foot>
+        </Confirm>
      </div>
   )
 }
 
 
+//컨피그 닫기
+function closeDialog(e) {
+  const dialog = document.querySelector(".Dialog");
+  dialog.close();
+ }
 
-//이메일인증 체크
-export const EmailCheck = (e) => {
-   
-const EMAIL_INPUT = document.querySelector(".email-input");
-const SELECT_BTN = document.querySelector(".select-btn");
-const SECURITY_GROUP = document.querySelector(".security-group");
-const EMAIL_ETC = document.querySelector("#email_etc");
 
-  SECURITY_GROUP.style.display = 'grid';
-   /* if(EMAIL_INPUT.value.length > 0) {
-      if(SELECT_BTN.value === "선택하세요."){
-        //alert("이메일 선택하세요.");
-        SECURITY_GROUP.style.display = 'flex';
+  //이메일인증 체크
+  const EmailCheck = (e) => {  
+    const dialog = document.querySelector(".Dialog");
+    const message = document.querySelector('.message');
+    const EMAIL_INPUT = document.querySelector(".email-input").value;
+    const EMAIL_ADRESS = document.querySelector("#email_adress").value;
+    const EMAIL_ETC = document.querySelector("#email_etc");
+    const SECURITY = document.querySelector(".security");
+    const SUBMIT_BTN = document.querySelector("#submit");
+    
+    dialog.showModal();
+    if(EMAIL_INPUT.length > 0){
+      if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS.includes('.')){
+        SECURITY.style.display = 'grid';
+        EMAIL_ETC.readOnly = true;
+        SUBMIT_BTN.style.display = 'none';
+      } else if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS === '직접 입력' ){
+        dialog.showModal();
+        message.textContent = '이메일 주소를 직접 입력하세요.';
+      } else if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS === '직접 입력' && EMAIL_ETC.value.length > 0){
+        console.log('인증번호 넘겨야줘')
+      } else {
+        dialog.showModal();
+        message.textContent = '이메일 주소를 선택하세요.';
+        EMAIL_ETC.readOnly = false;
+      }
     } else {
-      alert("이메일을 입력하세요.")
+      dialog.showModal();
+      message.textContent = '등록된 이메일이 없습니다. /n 회원가입 후 이용하세요.';
     }
-  }*/
+  }
 
-}
 
 export default FindEmail;
