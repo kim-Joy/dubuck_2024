@@ -5,12 +5,11 @@ import {Header} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
 import {Input, Label, CheckBox} from "components/Atom/Form";
 import {SelectEmail} from "components/Atom/Select";
+import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
-import Policy from 'page/Policy';
 
 
 function Join() {
-
     // input state
     const [inputs, setinputs] = useState({
       family_name: "",
@@ -184,16 +183,99 @@ function Join() {
           </section>
           <div className="btn-group inner20">
             <Button 
-                className={"btn full fill-orange radius-20 h-50"}                
-                classSpan={"txt-white font-18"}
-                text={"가입하기"}
+              onClick={JoinSubmit}
+              className={"btn full fill-orange radius-20 h-50"}                
+              classSpan={"txt-white font-18"}
+              text={"가입하기"}
             >
             </Button>
           </div>
         </form>
+
+        <Confirm>
+          <Confirm_body message={''} />
+          <Confirm_foot>
+            <Button 
+              className={"btn full fill-orange radius-20 h-40"}
+              classSpan={"txt-white font-14"}
+              onClick={closeDialog}
+              text={"확인"}
+            />
+          </Confirm_foot>
+        </Confirm>
      </div>
   )
 }
+
+//컨피그 닫기
+function closeDialog(e) {
+  const dialog = document.querySelector(".Dialog");
+  dialog.close();
+ }
+
+
+ 
+//회원가입
+function JoinSubmit(){
+  
+ const dialog = document.querySelector(".Dialog");
+ const message = document.querySelector('.message');
+  name()
+  
+  function name(){
+    const FirstName = document.querySelector('#family_name');
+    const MiddleName = document.querySelector('#middle_name');
+    if(FirstName.value.length > 0 ){ 
+      if(MiddleName.value.length > 0) {
+        email()
+      } else {
+        dialog.showModal();
+        message.textContent = '이름을 입력해주세요.';
+      }
+    } else {
+      dialog.showModal();
+      message.textContent = '성을 입력해주세요.';
+    }
+  }
+
+  function email(){
+    const EmailId = document.querySelector('#email_id');
+    const SelectBtn = document.querySelector('.select-btn');
+
+    if(EmailId.value.length > 0){
+      if(SelectBtn.value.includes('.')){
+        psaword()
+      }
+    } else {
+      dialog.showModal();
+      message.textContent = '이메일을 입력하세요.';
+    }
+  }
+
+  function psaword(){
+    const UserPw = document.querySelector('#user_pw');
+    const PwAgain = document.querySelector('#pw2');
+    if(UserPw.value.length > 0 ){ 
+      if(UserPw.value === PwAgain.value) {
+        agree()
+      } else {
+        dialog.showModal();
+        message.textContent = '비밀번호가 일치하지 않습니다..';
+      }
+    } else {
+      dialog.showModal();
+      message.textContent = '비밀번호를 입력하세요.';
+    }
+  }
+
+  function agree(){
+    console.log('약관동의')
+  }
+}
+
+
+
+
 
 
 export default Join;

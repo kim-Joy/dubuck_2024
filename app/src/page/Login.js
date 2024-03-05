@@ -31,30 +31,41 @@ function Login() {
   function LoginCheck(){ 
     const dialog = document.querySelector(".Dialog");
     const message = document.querySelector('.message');
-    const USER_EMAIL = document.querySelector("#email").value;
-    const USER_PW = document.querySelector("#pw").value;
-    let GUIDE = document.querySelector(".form-guide");
+    
+    email();
 
+    function email(){
+      const regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+      const USER_EMAIL = document.querySelector("#email");
+      const GUIDE = document.querySelector(".form-guide");
+      let admin = 'admin@naver.com';
 
+      if(regex.test(USER_EMAIL.value) === true) {
+        if(USER_EMAIL.value === admin) {
+          GUIDE.style.display = 'none';
+          pw()
+        } else {
+          GUIDE.style.display = 'block';
+          dialog.showModal();
+          message.textContent = '올바른 이메일을 입력하세요.';
+        }
+      } else {
+        dialog.showModal();
+        message.textContent = '이메일을 입력하세요.';
+      }
+    }
 
-    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-
-    let admin = 'admin@naver.com';
-
-    if(regex.test(USER_EMAIL) === true) {
-      if(USER_EMAIL === admin && USER_PW === '1234') {
-        console.log('로그인 성공');
+    function pw(){
+      const USER_PW = document.querySelector("#pw");
+      if(USER_PW.value === '1234') {
         navigate('/Main');
       } else {
         dialog.showModal();
-        message.textContent = '정보가 맞지않습니다. /n 다시 확인해주세요.';
-        GUIDE.style.display = 'none';
+        message.textContent = '비밀번호를 입력하세요.';
       }
-    } else {
-      GUIDE.style.display = 'block';
-      dialog.showModal();
-      message.textContent = '정보가 맞지않습니다. /n올바른게 입력해주세요.';
     }
+
+
   }
 
   return(
