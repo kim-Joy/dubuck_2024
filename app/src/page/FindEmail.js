@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
 import {Header} from "components/Organisms/Header";
@@ -12,6 +12,9 @@ import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Orga
   
 
 function FindEmail() { 
+
+
+
   // input state
   const [inputs, setinputs] = useState({
     email_id : "",
@@ -26,8 +29,8 @@ function FindEmail() {
       [e.target.name]: e.target.value
     });
   }
-
-
+  
+ 
   return(
      <div className="find-email">
         <Header 
@@ -64,7 +67,7 @@ function FindEmail() {
                   id={"email_adress"}
                   value={"선택하세요."}
                   text={"선택하세요."}
-
+                  
                 />
               </div>
               <Input
@@ -75,6 +78,7 @@ function FindEmail() {
                   name={"email_etc"}
                   value={email_etc}
                   onChange={valueChange}
+                  disabled={true}
                 />
             </li>
             <li className="form-item ">  
@@ -116,38 +120,50 @@ function closeDialog(e) {
   dialog.close();
  }
 
+ //이메일인증 체크
+ const EmailCheck = (e) => {  
+  const dialog = document.querySelector(".Dialog");
+  const message = document.querySelector('.message');
+  const EMAIL_INPUT = document.querySelector(".email-input");
+  const SUBMIT_BTN = document.querySelector("#submit");  
+  const EMAIL_ADRESS = document.querySelector("#email_adress");
+  const EMAIL_ETC = document.querySelector("#email_etc");
+  const SECURITY = document.querySelector(".security");
+  const regex2 = new RegExp('[a-z]+\.[a-z]{2,3}');
+  EMAIL_ETC.disabled = true;
 
-  //이메일인증 체크
-  const EmailCheck = (e) => {  
-    const dialog = document.querySelector(".Dialog");
-    const message = document.querySelector('.message');
-    const EMAIL_INPUT = document.querySelector(".email-input").value;
-    const EMAIL_ADRESS = document.querySelector("#email_adress").value;
-    const EMAIL_ETC = document.querySelector("#email_etc");
-    const SECURITY = document.querySelector(".security");
-    const SUBMIT_BTN = document.querySelector("#submit");
-    
-    dialog.showModal();
-    if(EMAIL_INPUT.length > 0){
-      if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS.includes('.')){
-        SECURITY.style.display = 'grid';
-        EMAIL_ETC.readOnly = true;
-        SUBMIT_BTN.style.display = 'none';
-      } else if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS === '직접 입력' ){
-        dialog.showModal();
-        message.textContent = '이메일 주소를 직접 입력하세요.';
-      } else if(EMAIL_INPUT.length > 0 && EMAIL_ADRESS === '직접 입력' && EMAIL_ETC.value.length > 0){
-        console.log('인증번호 넘겨야줘')
-      } else {
-        dialog.showModal();
-        message.textContent = '이메일 주소를 선택하세요.';
-        EMAIL_ETC.readOnly = false;
-      }
+  if(EMAIL_INPUT.value.length > 0){
+    if(EMAIL_INPUT.value.length > 0 && EMAIL_ADRESS.value.includes('.')){
+      SECURITY.style.display = 'grid';
+      SUBMIT_BTN.style.display = 'none';
+    } else if(EMAIL_ADRESS.value === '직접 입력') {
+      EMAIL_ETC.disabled = false;
+      email2();
     } else {
       dialog.showModal();
-      message.textContent = '등록된 이메일이 없습니다. /n 회원가입 후 이용하세요.';
+      message.textContent = '이메일을 선택하세요.';
+    }
+  } else {
+    dialog.showModal();
+    message.textContent = '이메일을 입력해주세요.';
+
+  }
+
+
+
+  function email2(){
+    if(EMAIL_ETC.value.length > 0 && regex2.test(EMAIL_ETC.value)) {
+      SECURITY.style.display = 'grid';
+      SUBMIT_BTN.style.display = 'none';
+      EMAIL_ETC.disabled = true;
+    } else {
+      dialog.showModal();
+      message.textContent = '유효하지 않은 이메일입니다.';
     }
   }
+
+}
+
 
 
 export default FindEmail;

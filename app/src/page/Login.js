@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
 import {Input, Label} from "components/Atom/Form";
@@ -8,13 +8,14 @@ import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Orga
 
 
 function Login() { 
-    
+
   // input state
   const [inputs, setinputs] = useState({
     email : "",
     pw: ""
 
    });
+   
    const {
     email,pw
    } = inputs;
@@ -28,11 +29,9 @@ function Login() {
 
 
   //로그인 체크
-  function LoginCheck(){ 
+  function LoginCheck(){
     const dialog = document.querySelector(".Dialog");
     const message = document.querySelector('.message');
-    
-    email();
 
     function email(){
       const regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
@@ -40,33 +39,39 @@ function Login() {
       const GUIDE = document.querySelector(".form-guide");
       let admin = 'admin@naver.com';
 
-      if(regex.test(USER_EMAIL.value) === true) {
-        if(USER_EMAIL.value === admin) {
+      if(USER_EMAIL.value.length > 0) {
+        if(regex.test(USER_EMAIL.value) === true && USER_EMAIL.value === admin) {
           GUIDE.style.display = 'none';
-          pw()
+          sessionStorage.setItem('EMAIL_KEY', USER_EMAIL.value);
+          pw();
+        } else if(regex.test(USER_EMAIL.value) === true && !(USER_EMAIL.value === admin)) {
+          dialog.showModal();
+          message.textContent = '가입되지 않은 이메일입니다. /n 회원가입 후 이용해주세요.';
         } else {
           GUIDE.style.display = 'block';
-          dialog.showModal();
-          message.textContent = '올바른 이메일을 입력하세요.';
         }
       } else {
         dialog.showModal();
         message.textContent = '이메일을 입력하세요.';
       }
     }
-
     function pw(){
       const USER_PW = document.querySelector("#pw");
-      if(USER_PW.value === '1234') {
+
+      if(USER_PW.value === '1234') {        
+        sessionStorage.setItem('PW_KEY', USER_PW.value);
         navigate('/Main');
       } else {
         dialog.showModal();
         message.textContent = '비밀번호를 입력하세요.';
       }
     }
-
+    email();
 
   }
+  
+  
+
 
   return(
      <div className="login">
@@ -149,10 +154,6 @@ function closeDialog(e) {
   dialog.close();
  }
 
-
-
-
-
-
+ 
 
 export default Login;

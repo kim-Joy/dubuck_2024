@@ -1,9 +1,29 @@
+import {useNavigate} from 'react-router-dom';
+
 import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
 const Security = (props) => {
+  const navigate = useNavigate();
+
+  
+// 비밀번호 발송
+function handlerFind(){
+  const dialog = document.querySelector(".Dialog");
+  const message = document.querySelector('.message');
+  if(!(securityChcek() === false)){
+    dialog.showModal();
+    message.textContent = '인증번호를 확인하세요.';
+  } else {
+    dialog.showModal();
+    message.textContent = '입력한 이메일로 임시 비밀번호가 발송되었습니다.';
+  }
+  
+
+
+} 
   
       return(
         <div className="security">
@@ -31,6 +51,7 @@ const Security = (props) => {
               className={"btn full fill-orange radius-20 h-50"}
               classSpan={"txt-white font-18"}
               text={"계정찾기"}
+              onClick={handlerFind}
             >
             </Button> 
           </div>
@@ -53,21 +74,14 @@ function securityChcek() {
     GUIDE.classList.remove('warning');
     SECURITY_NUM.readOnly = true;
     GUIDE.style.display = "none";
+    return false;
   } else {
-    console.log('false');
     GUIDE.textContent = "인증번호가 일치하지 않습니다."
     GUIDE.classList.add('warning');
+
   }
 }
 
-// 비밀번호 발송
-/*function emailfind(){
-  const dialog = document.querySelector(".Dialog");
-  const message = document.querySelector('.message');
-
-  dialog.showModal();
-  message.textContent = '입력한 이메일로 임시 비밀번호가 발송되었습니다.';
-} */ 
 
 
 export {Security};

@@ -21,7 +21,11 @@ const SelectEmail = (props) => {
     const target = e.target.value;
     SELECT_BTN.classList.remove('on');
     setIsSelected(target);
-    
+  }
+
+  //셀렉트 변경될때
+  function handlerChange(e){
+    console.log('d');
   }
  
   return(
@@ -30,7 +34,7 @@ const SelectEmail = (props) => {
           type="button" 
           id={props.id}
           className="select-btn"
-          onChange={props.onChange}
+          onChange={handlerChange}
           onClick={selectClick}
           value={IsSelected}
         >{IsSelected}
@@ -68,5 +72,7 @@ const SelectEmail = (props) => {
 function selectClick(e){
   e.target.classList.toggle('on');
 }
+
+
 
 export {SelectEmail};

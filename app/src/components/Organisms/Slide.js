@@ -31,13 +31,15 @@ function SwipeToSlide() {
       <Slider {...settings}>
         {today_list.map((item) =>(
             <li className="item">
-              <button className="btn">
+              <div className="btn">
+                <Link to="/Result_View"> 
                 <div className="count-group"> 
                   <p className="data">{item.data}</p>
                   <Link to="/Result_View">
                    <strong className="num">{item.num}</strong>
                   </Link>
                 </div>
+                </Link>
                 <p className="perfect">{item.perfect}</p>
                 <div className="score">
                   <dl>
@@ -49,7 +51,7 @@ function SwipeToSlide() {
                     <dd>{item.wrong}</dd>
                   </dl>
                 </div>
-              </button>
+              </div>
             </li>
           ))}
       </Slider>

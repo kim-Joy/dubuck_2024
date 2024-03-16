@@ -31,6 +31,7 @@ function Result() {
         <ul className="list-group character record">
           {record_list.map((item) =>(
             <li className="item">
+              <Link to="/Result_Vieq">
               <button className="btn">
                 <div className="count-group"> 
                   <p className="data">{item.data}</p>
@@ -50,6 +51,7 @@ function Result() {
                   </dl>
                 </div>
               </button>
+              </Link>
             </li>
           ))}
         </ul>

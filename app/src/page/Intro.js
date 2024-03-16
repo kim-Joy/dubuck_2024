@@ -6,10 +6,12 @@ import {Button} from "components/Atom/Button";
 import Login from './Login';
 
 function Intro() {
+  
   function loginClick(e) {
     e.preventDefault();
+    
+  const absolute = document.querySelector('.absolute-box');
 
-    const absolute = document.querySelector('.absolute-box');
     absolute.classList.add('on');
   }
 
@@ -42,7 +44,6 @@ function Intro() {
      </div>
   )
 }
-
 
 
 export default Intro;

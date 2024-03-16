@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {Header} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
@@ -9,7 +9,13 @@ import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Orga
 
 
 
+
+
 function Join() {
+  useEffect(() => {
+    console.log('dd')
+  }, []);
+
     // input state
     const [inputs, setinputs] = useState({
       family_name: "",
@@ -30,7 +36,9 @@ function Join() {
         [e.target.name]: e.target.value
       });
     }
-  
+    
+
+
   return(
      <div className="join">
         <Header
@@ -102,12 +110,13 @@ function Join() {
                 />
               </div>
               <Input
-                  className={"form-input full"}
+                  className={"form-input full email_etc"}
                   type={"text"}
                   plceholder={"직접 입력해주세요."}
                   name={"email_etc"}
                   value={email_etc}
                   onChange={valueChange}
+                  disabled={true}
                 />
             </li>
             <li className="form-item">
@@ -142,7 +151,10 @@ function Join() {
                 value={pw2}
                 onChange={valueChange}
               />
-              <p className="form-guide warning">비밀번호가 일치하지 않습니다.</p>
+              <p 
+              className="form-guide warning"
+              style={{display: "none"}} 
+              >비밀번호가 일치하지 않습니다.</p>
             </li>
           </ul>
 
@@ -220,7 +232,7 @@ function JoinSubmit(){
   
  const dialog = document.querySelector(".Dialog");
  const message = document.querySelector('.message');
-  name()
+
   
   function name(){
     const FirstName = document.querySelector('#family_name');
@@ -243,24 +255,35 @@ function JoinSubmit(){
     const SelectBtn = document.querySelector('.select-btn');
 
     if(EmailId.value.length > 0){
-      if(SelectBtn.value.includes('.')){
-        psaword()
+      if(EmailId.value.length > 0 && SelectBtn.value.includes('.')){
+        psaword();
+      }  else {
+        dialog.showModal();
+        message.textContent = '이메일을 선택하세요.';
       }
     } else {
       dialog.showModal();
-      message.textContent = '이메일을 입력하세요.';
+      message.textContent = '이메일을 입력해주세요.';
+  
     }
+
   }
 
-  function psaword(){
+  function psaword(){    
     const UserPw = document.querySelector('#user_pw');
     const PwAgain = document.querySelector('#pw2');
+    const GUIDE = document.querySelector(".form-guide.warning");
+
     if(UserPw.value.length > 0 ){ 
-      if(UserPw.value === PwAgain.value) {
-        agree()
+      if(PwAgain.value.length > 0 ){ 
+        if(UserPw.value === PwAgain.value ) {
+          agree();
+        } else {
+          GUIDE.style.display = 'block';
+        }
       } else {
         dialog.showModal();
-        message.textContent = '비밀번호가 일치하지 않습니다..';
+        message.textContent = '비밀번호 확인을 입력하세요.';
       }
     } else {
       dialog.showModal();
@@ -271,6 +294,8 @@ function JoinSubmit(){
   function agree(){
     console.log('약관동의')
   }
+
+  name()
 }
 
 
