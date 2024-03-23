@@ -31,7 +31,7 @@ function Result() {
         <ul className="list-group character record">
           {record_list.map((item) =>(
             <li className="item">
-              <Link to="/Result_Vieq">
+              <Link to="/Result_View">
               <button className="btn">
                 <div className="count-group"> 
                   <p className="data">{item.data}</p>
@@ -60,9 +60,5 @@ function Result() {
   )
 }
 
-/* 
-슬라이드 영역 버튼에 링크 다는경우 스와이프가 어려워서 바꿨는데 흠 ... 다 만들 후 클릭 영역 어디로 할지 고민해보기
-
-*/
 
 export default Result;

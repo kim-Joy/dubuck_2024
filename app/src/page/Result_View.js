@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import {SelectEmail} from "components/Atom/Select";
+import {Select} from 'components/Atom/Select';
 
 import {Header} from "components/Organisms/Header";
 import Plating from "components/Organisms/Plating";
-
 
 function Result_View() {
   const today_list = [
@@ -16,6 +15,21 @@ function Result_View() {
 
   ]
 
+  //option click
+  const optionClick = (e) =>{
+    let SELECT_BTN = document.querySelector(".select-btn");
+    const target = e.target.value;
+    SELECT_BTN.classList.remove('on');
+    setIsSelected(target);
+  }
+
+  let [IsSelected, setIsSelected] = useState('전체');
+  const OPTION_LIST = [
+    {key: "1", value: "전체"},
+    {key: "2", value: "정답만"},
+    {key: "3", value: "오답만"}
+  ]
+
   return(
     <div className="result">
 
@@ -23,7 +37,15 @@ function Result_View() {
           title={"챌린지 결과"}
         />
       <div className="util inner20">
-        <SelectEmail />
+        <Select
+          value={IsSelected}
+          tit={IsSelected}
+          onChange={handlerChange}
+          onClick={selectClick}
+          OP_LIST={OPTION_LIST}
+          optionClick={optionClick}
+        >
+        </Select>
       </div>
       <section className="inner20">
         <ul className="index-group">
@@ -50,6 +72,17 @@ function Result_View() {
       <Plating />
     </div>
   )
+}
+
+
+//셀렉트 변경될때
+function handlerChange(e){
+  console.log('d');
+}
+
+//select toggle
+function selectClick(e){
+  e.target.classList.toggle('on');
 }
 
 export default Result_View;

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {Header} from "components/Organisms/Header";
 import {Button} from "components/Atom/Button";
 import {Input, Label} from "components/Atom/Form";
-import {SelectEmail} from "components/Atom/Select";
+import {Select} from "components/Atom/Select";
 import {Security} from "components/Organisms/Security";
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
@@ -29,7 +29,32 @@ function FindEmail() {
       [e.target.name]: e.target.value
     });
   }
+
+  let [IsSelected, setIsSelected] = useState('선택하세요.');
   
+  const OPTION_LIST = [
+    {key: "1", value: "naver.com"},
+    {key: "2", value: "daum.com"},
+    {key: "3", value: "gmail.com"},
+    {key: "4", value: "nate.com"},
+    {key: "5", value: "yahoo.com"},
+    {key: "6", value: "직접 입력"}
+  ]
+  //option click
+  const optionClick = (e) =>{
+    let SELECT_BTN = document.querySelector(".select-btn");
+    const target = e.target.value;
+    const EMAIL_ETC = document.querySelector("#email_etc");
+    SELECT_BTN.classList.remove('on');
+    setIsSelected(target);
+    
+    if(target === '직접 입력') {
+      EMAIL_ETC.disabled = false;
+    } else {
+      EMAIL_ETC.disabled = true;
+    }
+  }
+
  
   return(
      <div className="find-email">
@@ -63,11 +88,14 @@ function FindEmail() {
                   htmlFor={"email_adress"}
                   text={"이메일 주소"}
                 />
-                <SelectEmail 
+                <Select
                   id={"email_adress"}
-                  value={"선택하세요."}
-                  text={"선택하세요."}
-                  
+                  value={IsSelected}
+                  tit={IsSelected}
+                  onChange={optionClick}
+                  onClick={selectClick}
+                  OP_LIST={OPTION_LIST}
+                  optionClick={optionClick}
                 />
               </div>
               <Input
@@ -114,6 +142,12 @@ function FindEmail() {
 }
 
 
+
+//select toggle
+function selectClick(e){
+  e.target.classList.toggle('on');
+}
+
 //컨피그 닫기
 function closeDialog(e) {
   const dialog = document.querySelector(".Dialog");
@@ -134,6 +168,7 @@ function closeDialog(e) {
 
   if(EMAIL_INPUT.value.length > 0){
     if(EMAIL_INPUT.value.length > 0 && EMAIL_ADRESS.value.includes('.')){
+      console.log('hello');
       SECURITY.style.display = 'grid';
       SUBMIT_BTN.style.display = 'none';
     } else if(EMAIL_ADRESS.value === '직접 입력') {
