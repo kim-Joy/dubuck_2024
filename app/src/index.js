@@ -11,8 +11,8 @@ import Policy from "page/Policy";
 import Marketing from "page/Marketing";
 import Main from "page/Main";
 import Word from "page/Word";
+import Exam from "page/Exam";
 import Tutorials from 'page/Tutorials';
-import Finish from "page/Finish";
 import Result from "page/Result";
 import Result_View from "page/Result_View";
 import Attendance from "page/Attendance";
@@ -49,8 +49,8 @@ root.render(
 
       <Route path="/Attendance" element={<Attendance />}></Route>
       <Route path="/Word" element={<Word />}></Route>
-      <Route path="/Finish" element={<Finish />}></Route>
-
+      <Route path="/Exam" element={<Exam />}></Route>
+  
       <Route path="/Tutorials" element={<Tutorials />}></Route>
 
       <Route path="/Result" element={<Result />}></Route>
