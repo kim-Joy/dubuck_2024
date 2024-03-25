@@ -26,11 +26,11 @@ function Header(props){
     linkTo = '/Main';
   }
 
-  // 팝업을 띄우는 함수
-const openDialog = () => {
-  const dialog = document.querySelector(".Dialog");
-  dialog.showModal();
-};
+  //시험종료 팝업 노출 
+  const openDialog = () => {
+    const dialog = document.querySelector(".Dialog");
+    dialog.showModal();
+  };
 
   return(
     <header className="Header">

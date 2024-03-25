@@ -93,7 +93,6 @@ function FindEmail() {
                   value={IsSelected}
                   tit={IsSelected}
                   onChange={optionClick}
-                  onClick={selectClick}
                   OP_LIST={OPTION_LIST}
                   optionClick={optionClick}
                 />
@@ -143,10 +142,7 @@ function FindEmail() {
 
 
 
-//select toggle
-function selectClick(e){
-  e.target.classList.toggle('on');
-}
+
 
 //컨피그 닫기
 function closeDialog(e) {

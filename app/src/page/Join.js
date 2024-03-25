@@ -137,7 +137,6 @@ function Join() {
                   value={IsSelected}
                   tit={IsSelected}
                   onChange={optionClick}
-                  onClick={selectClick}
                   OP_LIST={OPTION_LIST}
                   optionClick={optionClick}
                 />
@@ -251,13 +250,6 @@ function Join() {
         </Confirm>
      </div>
   )
-}
-
-
-
-//select toggle
-function selectClick(e){
-  e.target.classList.toggle('on');
 }
 
 

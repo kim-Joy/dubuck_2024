@@ -17,7 +17,6 @@
 ==================================== */
 .intro {
   height: 100%;
-  overflow:  hidden;
   .btn-group {
     margin-top: 42px;
   }
@@ -34,6 +33,7 @@
   position: absolute;
   top:0; right: 0;
   width: 100%; height: auto;
+  padding-bottom: 30px;
   background-color: $white;
   transform: translateX(100%);
   transition: .6s;

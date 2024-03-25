@@ -10,7 +10,7 @@ const Select = (props, {children}) => {
         id={props.id}
         className={'select-btn'}
         onChange={props.onChange}
-        onClick={props.onClick}
+        onClick={selectClick}
         value={props.value}
         >{props.tit}
         <i clasName="arrow">
@@ -37,7 +37,10 @@ const Select = (props, {children}) => {
 
 
 
-
+//select toggle
+function selectClick(e){
+  e.target.classList.toggle('on');
+}
 
 
 export {Select};
