@@ -78,8 +78,8 @@
   }
   .dubuck_symbolon {
     max-width: 100%;
-    margin-top: -54px; 
-    padding-left: 47px; 
+    margin-top: -84px; 
+    padding-left: 27px; 
   }
 }
 
@@ -463,8 +463,8 @@
         @include mask(
           $webkit_mask_url: url($url + "icon/volume.svg"),
           $mask_url: url($url + "icon/volume.svg"),
-          $webkit_mask_size: 18px 18px,
-          $mask_size: 18px 18px,
+          $webkit_mask_size: 14px 14px,
+          $mask_size: 14px 14px,
           $webkit_mask_position: center,
           $mask_position: center
         );

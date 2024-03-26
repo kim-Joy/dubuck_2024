@@ -38,6 +38,7 @@ function Result_View() {
         />
       <div className="util inner20">
         <Select
+          selectClass={"sort"}
           value={IsSelected}
           tit={IsSelected}
           onChange={handlerChange}

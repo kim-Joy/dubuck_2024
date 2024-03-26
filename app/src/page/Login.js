@@ -46,7 +46,9 @@ function Login() {
           pw();
         } else if(regex.test(USER_EMAIL.value) === true && !(USER_EMAIL.value === admin)) {
           dialog.showModal();
-          message.textContent = '가입되지 않은 이메일입니다. /n 회원가입 후 이용해주세요.';
+          message.textContent = `
+          가입되지 않은 이메일입니다. 
+          회원가입 후 이용해주세요.`;
         } else {
           GUIDE.style.display = 'block';
         }

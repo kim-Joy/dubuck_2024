@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const Select = (props, {children}) => {
 
   return(
-    <div className={`select ${props.clasName}`}>
+    <div className={`select ${props.selectClass}`}>
       <button
         type="button"
         id={props.id}
@@ -22,7 +22,7 @@ const Select = (props, {children}) => {
             <li>
               <button 
                 type="button" 
-                className={`option-btn ${item.className}`}
+                className={`option-btn ${item.OptionClass}`}
                 key={item.key}
                 onClick={props.optionClick}
                 value={item.value}

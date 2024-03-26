@@ -8,7 +8,8 @@ import Card from 'components/Organisms/Card';
 import Screen from 'components/Organisms/Screen';
 
 const Word =() => {
-  const DESC = `단어 /n 공부해볼까?`
+  const DESC = `단어 
+  공부해볼까?`
   return (
     <div className="word">
       <Header 

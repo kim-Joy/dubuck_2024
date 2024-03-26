@@ -18,7 +18,9 @@ function handlerFind(){
     message.textContent = '인증번호를 확인하세요.';
   } else {
     dialog.showModal();
-    message.textContent = '입력한 이메일로 임시 비밀번호가 발송되었습니다.';
+    message.textContent  = `
+    입력한 이메일로 
+    임시 비밀번호가 발송되었습니다.`;
   }
   
 

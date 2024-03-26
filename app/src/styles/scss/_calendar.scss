@@ -15,6 +15,7 @@ abbr[title] {
     weight: 300;
   color: $black;
   }
+  
   .react-calendar__month-view__weekdays {
     margin-bottom: 8px;
     color: $black;
@@ -33,6 +34,7 @@ abbr[title] {
       width: 30px; height: 30px;
       padding: 0;
       line-height: 30px;
+      text-align: center;
     }
   }
   .react-calendar__month-view__days {
@@ -86,16 +88,18 @@ abbr[title] {
 /* today */
 .react-calendar__tile--now {
   abbr {
-    background-color: yellow;
+    
   }
 }
 
 
 
+
 /* style */
 .calendar-form {
+  position: relative;
   margin-top: -42px;
-  padding: 0 10px;
+  padding: 0 10px 20px;
   box-sizing: border-box;
   .react-calendar {
     position: relative;
@@ -105,6 +109,9 @@ abbr[title] {
       top: 0; left: 0;
       button {
         font-weight: 700;
+        font-family: $font_en;
+        color: $black;
+
       }
     }
     /* 월 상단 */
@@ -121,8 +128,23 @@ abbr[title] {
         color: #fff;
         font-size: 12px;
       }
+      .react-calendar__navigation__next-button {
+        display: none;
+      }
     }
     
+  }
+  .calendar-btn-today {
+    position: absolute;
+    top:0; left: 90px;
+    z-index:1;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: $grape_61;
+    color: $white;
+    font-size: 11px;
+    font-family: $font_en;
   }
 }
 
