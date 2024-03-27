@@ -7,13 +7,22 @@ import { Header } from 'components/Organisms/Header';
 import Card from 'components/Organisms/Card';
 import Screen from 'components/Organisms/Screen';
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
-
+import FinshConfirm from "components/Organisms/FinshConfirm"
 
 const Exam =(props) => {
-  let input = document.createElement('input');
-  input.setAttribute('class', 'pTag');
-  const DESC = `오늘은 ${input}문항으로
-  챌린지 시작해볼까?`
+  const start = document.querySelector('.screen.start .desc');
+  const lineBreak = document.createElement('br');
+  const input = document.createElement('input');
+  input.type ="number";
+  input.className = 'num';
+  input.value = '';
+  input.placeholder = '?';
+
+  start.appendChild(input);
+  start.appendChild(document.createTextNode(' 단어'));
+  start.appendChild(lineBreak);
+  start.appendChild(document.createTextNode('공부 해볼까?'));
+
   return (
     <div className="exam">
       <Header 
@@ -36,7 +45,7 @@ const Exam =(props) => {
       <div className="layer active">
         <Screen
           className={'start'}
-          desc={`${DESC}`}
+          desc={''}
         >
           <Button
             onClick={layerClose}
@@ -48,30 +57,7 @@ const Exam =(props) => {
         <div className="dim"></div>
       </div>
 
-      <Confirm className={"modal"}>
-        
-        <Confirm_head 
-          title={"잠깐! /n 아직 풀지 않은 문제들이 있습니다."} 
-        />
-        <Confirm_body 
-          message={"지금까지 푼 단어들은 저장 및 채점에 포함되지 않으므로, 처음부터 시작 하셔야 합니다. 그래도 나가시겠습니까?"} 
-        />
-        <Confirm_foot >
-          <Link to="/Main">
-          <Button 
-              className={"btn border border-whtie radius-20 h-50"}
-              classSpan={"txt-white"}
-              text={"공부끝내기"}
-          />
-          </Link>
-          <Button 
-              className={"btn fill-whtie radius-20 h-50"}
-              classSpan={"txt-blue"}
-              text={"아직 더풀래"}
-          />
-        </Confirm_foot>
-        
-      </Confirm>
+      <FinshConfirm />
     </div>
   )
 } 
@@ -82,8 +68,5 @@ function layerClose(){
 
 }
 
-function wordExit(){
-  console.log('sss')
-}
 
 export default Exam;

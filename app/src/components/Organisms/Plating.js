@@ -101,18 +101,20 @@ function Plating() {
       <Confirm>
           <Confirm_body message={''} />
           <Confirm_foot>
-            <Button 
-              className={"btn full fill-orange radius-20 h-40"}
-              classSpan={"txt-white font-14 success"}
-              onClick={handlerLink}
-              text={''}
-            />
-             <Button 
-              className={"btn full fill-gray-f1 radius-20 h-40"}
-              classSpan={"txt-graye-68 font-14"}
-              onClick={closeDialog}
-              text={"취소"}
-            />
+            <div className="btn-group horizontal">
+              <Button 
+                className={"btn full fill-orange radius-20 h-40"}
+                classSpan={"txt-white font-14 success"}
+                onClick={handlerLink}
+                text={''}
+              />
+              <Button 
+                className={"btn full fill-gray-f1 radius-20 h-40"}
+                classSpan={"txt-graye-68 font-14"}
+                onClick={closeDialog}
+                text={"취소"}
+              />
+            </div>
           </Confirm_foot>
         </Confirm>
     </div>
@@ -123,7 +125,7 @@ function Plating() {
 
 function platingLayerShow(){
   const platingLayer = document.querySelector('.plating');
-  platingLayer.classList.add('current');
+  platingLayer.classList.toggle('current');
 
   
 }

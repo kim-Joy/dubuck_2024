@@ -53,13 +53,15 @@ function Main() {
           message={"불편한점, 바라는 점등 다양한  의견을 들려주세요!"} 
         />
         <Confirm_foot >
-          <Link to="/Suggestion">
-          <Button 
-              className={"btn border border-whtie radius-20 h-50"}
-              classSpan={"txt-white"}
-              text={"충고하기"}
-          />
-          </Link>
+          <div className="btn-group">
+            <Link to="/Suggestion">
+            <Button 
+                className={"btn border border-whtie radius-20 h-50"}
+                classSpan={"txt-white"}
+                text={"충고하기"}
+            />
+            </Link>
+          </div>
         </Confirm_foot>
         
       </Confirm> 

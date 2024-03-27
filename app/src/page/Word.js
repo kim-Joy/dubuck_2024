@@ -6,10 +6,25 @@ import {Button} from "components/Atom/Button";
 import { Header } from 'components/Organisms/Header';
 import Card from 'components/Organisms/Card';
 import Screen from 'components/Organisms/Screen';
+import FinshConfirm from "components/Organisms/FinshConfirm"
 
 const Word =() => {
-  const DESC = `단어 
-  공부해볼까?`
+  const start = document.querySelector('.screen.start .desc');
+  const lineBreak = document.createElement('br');
+  const input = document.createElement('input');
+  Object.assign(input, {
+    type: 'number', 
+    className: 'num', 
+    value: '',
+    placeholder: '?'
+  });
+
+  start.textContent = '오늘은 ';
+  start.appendChild(input);
+  start.appendChild(document.createTextNode(' 문항으로'));
+  start.appendChild(lineBreak);
+  start.appendChild(document.createTextNode('챌린지 시작해볼까?'));
+
   return (
     <div className="word">
       <Header 
@@ -32,7 +47,7 @@ const Word =() => {
       <div className="layer active">
         <Screen
           className={'start'}
-          desc={`${DESC}`}
+          desc={''}
         >
           <Button
             onClick={layerClose}
@@ -43,6 +58,8 @@ const Word =() => {
         </Screen>
         <div className="dim"></div>
       </div>
+      
+      <FinshConfirm />
     </div>
   )
 } 

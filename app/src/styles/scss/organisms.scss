@@ -199,9 +199,14 @@
     flex-wrap: wrap;
     justify-content: space-around;
     padding-bottom: 20px;
+    .btn-group {
+      width: 100%;
+      gap: 0 8px;
+      margin-top: 0;
+    }
     .btn {
-      width: 50%;
-      max-width: 130px;
+      margin: 0 auto;
+      min-width: 142px;
     }
   }
 }
@@ -620,6 +625,7 @@
       }
       .num {
         width: 43px;
+        margin-bottom: 10px;
         background-color: transparent;
         border-bottom: 1px solid $white;
         text-align: center;
