@@ -17,10 +17,6 @@ const Screen =(props) => {
         : <> 
           {Dubuck} 
           <p className="question-num">
-            <input
-              className="num"
-              placeholder='?'
-            />
             <span className="desc">{props.desc}</span>
           </p> 
           </>

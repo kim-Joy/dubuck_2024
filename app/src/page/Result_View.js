@@ -41,8 +41,7 @@ function Result_View() {
           selectClass={"sort"}
           value={IsSelected}
           tit={IsSelected}
-          onChange={handlerChange}
-          onClick={selectClick}
+          onChange={optionClick}
           OP_LIST={OPTION_LIST}
           optionClick={optionClick}
         >
@@ -75,15 +74,5 @@ function Result_View() {
   )
 }
 
-
-//셀렉트 변경될때
-function handlerChange(e){
-  console.log('d');
-}
-
-//select toggle
-function selectClick(e){
-  e.target.classList.toggle('on');
-}
 
 export default Result_View;

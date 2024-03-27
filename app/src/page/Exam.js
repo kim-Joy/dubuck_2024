@@ -9,8 +9,11 @@ import Screen from 'components/Organisms/Screen';
 import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Organisms/Confirm";
 
 
-const Exam =() => {
-  const DESC = `오늘은  문항으로 /n 챌린지 시작해볼까?`
+const Exam =(props) => {
+  let input = document.createElement('input');
+  input.setAttribute('class', 'pTag');
+  const DESC = `오늘은 ${input}문항으로
+  챌린지 시작해볼까?`
   return (
     <div className="exam">
       <Header 
