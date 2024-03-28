@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dubuck_2024/static/css/main.ec06e908.css",
-    "main.js": "/dubuck_2024/static/js/main.80e7ac20.js",
+    "main.css": "/dubuck_2024/static/css/main.de76643a.css",
+    "main.js": "/dubuck_2024/static/js/main.6b9948bc.js",
     "static/media/KIMM_bold.woff2": "/dubuck_2024/static/media/KIMM_bold.ec59780b4493e25242c2.woff2",
     "static/media/KIMM_Light.ttf": "/dubuck_2024/static/media/KIMM_Light.ca86f545b13cffa9e2c8.ttf",
     "static/media/KIMM_bold.ttf": "/dubuck_2024/static/media/KIMM_bold.e2c9f2e4cb62ca27fea5.ttf",
@@ -32,7 +32,7 @@
     "static/media/slick.woff": "/dubuck_2024/static/media/slick.295183786cd8a1389865.woff",
     "static/media/trash.svg": "/dubuck_2024/static/media/trash.75496957f1ca80e65be8.svg",
     "static/media/history.svg": "/dubuck_2024/static/media/history.923d274fa6db268d2ce0.svg",
-    "static/media/volume.svg": "/dubuck_2024/static/media/volume.2a89d187dbe5fe791baa.svg",
+    "static/media/volume.svg": "/dubuck_2024/static/media/volume.c9d9c471153bb1ffd16b.svg",
     "static/media/book.svg": "/dubuck_2024/static/media/book.64816b2ce6ec28a11e22.svg",
     "static/media/exam.svg": "/dubuck_2024/static/media/exam.6f3ab118325255962673.svg",
     "index.html": "/dubuck_2024/index.html",
@@ -45,11 +45,11 @@
     "static/media/plus.svg": "/dubuck_2024/static/media/plus.fc703c06b5910882b47b.svg",
     "static/media/arrow_round.svg": "/dubuck_2024/static/media/arrow_round.7c0aef4c197bba840b49.svg",
     "static/media/checked_round.svg": "/dubuck_2024/static/media/checked_round.d477ec28c652cfb43e71.svg",
-    "main.ec06e908.css.map": "/dubuck_2024/static/css/main.ec06e908.css.map",
-    "main.80e7ac20.js.map": "/dubuck_2024/static/js/main.80e7ac20.js.map"
+    "main.de76643a.css.map": "/dubuck_2024/static/css/main.de76643a.css.map",
+    "main.6b9948bc.js.map": "/dubuck_2024/static/js/main.6b9948bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec06e908.css",
-    "static/js/main.80e7ac20.js"
+    "static/css/main.de76643a.css",
+    "static/js/main.6b9948bc.js"
   ]
 }
