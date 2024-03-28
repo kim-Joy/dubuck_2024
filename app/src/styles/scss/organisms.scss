@@ -677,6 +677,13 @@
 
 .card {
   margin-top: 26px;
+  + .btn-group {
+    position: fixed;
+    bottom: 20px; left: 0; 
+    width: 100%; 
+    justify-content: space-between;
+
+  }
 }
 .antenna {
   max-width: 335px;

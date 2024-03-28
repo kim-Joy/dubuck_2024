@@ -10,7 +10,7 @@ import {Confirm, Confirm_head, Confirm_body, Confirm_foot} from "components/Orga
 import FinshConfirm from "components/Organisms/FinshConfirm"
 
 const Exam =(props) => {
-  const start = document.querySelector('.screen.start .desc');
+  /*const start = document.querySelector('.screen.start .desc');
   const lineBreak = document.createElement('br');
   const input = document.createElement('input');
   input.type ="number";
@@ -21,7 +21,7 @@ const Exam =(props) => {
   start.appendChild(input);
   start.appendChild(document.createTextNode(' 단어'));
   start.appendChild(lineBreak);
-  start.appendChild(document.createTextNode('공부 해볼까?'));
+  start.appendChild(document.createTextNode('공부 해볼까?'));*/
 
   return (
     <div className="exam">
@@ -29,7 +29,7 @@ const Exam =(props) => {
         logo={true}
       />
       <Card />
-      <div className="btn-group horizontal">
+      <div className="btn-group horizontal inner20">
       <Button
           className={"btn fill-grape-65 radius-20 h-40"}
           classSpan={"txt-white font-16"}
@@ -45,7 +45,7 @@ const Exam =(props) => {
       <div className="layer active">
         <Screen
           className={'start'}
-          desc={''}
+          desc={'a문항'}
         >
           <Button
             onClick={layerClose}

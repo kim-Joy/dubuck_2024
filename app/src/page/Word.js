@@ -9,21 +9,22 @@ import Screen from 'components/Organisms/Screen';
 import FinshConfirm from "components/Organisms/FinshConfirm"
 
 const Word =() => {
-  const start = document.querySelector('.screen.start .desc');
-  const lineBreak = document.createElement('br');
-  const input = document.createElement('input');
-  Object.assign(input, {
-    type: 'number', 
-    className: 'num', 
-    value: '',
-    placeholder: '?'
-  });
 
-  start.textContent = '오늘은 ';
-  start.appendChild(input);
-  start.appendChild(document.createTextNode(' 문항으로'));
-  start.appendChild(lineBreak);
-  start.appendChild(document.createTextNode('챌린지 시작해볼까?'));
+    const start = document.querySelector('.screen.start .desc');
+    const lineBreak = document.createElement('br');
+    const input = document.createElement('input');
+    Object.assign(input, {
+      type: 'number', 
+      className: 'num', 
+      value: '',
+      placeholder: '?'
+    });
+
+    start.textContent = '오늘은 ';
+    start.appendChild(input);
+    start.appendChild(document.createTextNode(' 문항으로'));
+    start.appendChild(lineBreak);
+    start.appendChild(document.createTextNode('챌린지 시작해볼까?'));
 
   return (
     <div className="word">
@@ -31,7 +32,7 @@ const Word =() => {
         logo={true}
       />
       <Card />
-      <div className="btn-group horizontal">
+      <div className="btn-group horizontal inner20">
       <Button
           className={"btn fill-grape-65 radius-20 h-40"}
           classSpan={"txt-white font-16"}

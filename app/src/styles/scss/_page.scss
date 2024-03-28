@@ -244,20 +244,34 @@
 
 
 .layer {
-  display: none;
   position: absolute;
   bottom: 0; left: 0;
   width: 100%; height: calc(100vh - 50px);
   background-color: $white;
+  animation-name : fadeIn;
+  animation-duration : 0.9s;
+  animation-fill-mode: forwards;
   .screen.start {
     left: 50%;
     transform: translate(-50%);
     width: 100%;
   }
   &.active {
-    display: block;
+    animation: none;
   }
  }
+
+
+ @keyframes fadeIn{
+  0% {
+    transform: translateY(0);
+    display: block;
+  }
+  100% {
+    transform: translateY(100%);
+    display: none;
+  }
+}
 
 
 
