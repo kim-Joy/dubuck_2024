@@ -45,7 +45,7 @@ const Word =() => {
         />
       </div>
       
-      <div className="layer active">
+      <div className="layer active ss">
         <Screen
           className={'start'}
           desc={''}
