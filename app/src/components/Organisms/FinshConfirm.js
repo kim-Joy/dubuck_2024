@@ -25,7 +25,7 @@ function FinshConfirm() {
           <div className="btn-group horizontal">
             <Link to="/Main">
             <Button 
-                className={"btn border border-whtie radius-20 h-50"}
+                className={"btn border border-white radius-20 h-50"}
                 classSpan={"txt-white"}
                 text={"공부끝내기"}
             />
