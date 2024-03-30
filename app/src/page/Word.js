@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {Input, Label} from "components/Atom/Form";
 import {Button} from "components/Atom/Button";
@@ -10,6 +10,7 @@ import FinshConfirm from "components/Organisms/FinshConfirm"
 
 const Word =() => {
 
+  useEffect(() => {
     const start = document.querySelector('.screen.start .desc');
     const lineBreak = document.createElement('br');
     const input = document.createElement('input');
@@ -25,6 +26,8 @@ const Word =() => {
     start.appendChild(document.createTextNode(' 문항으로'));
     start.appendChild(lineBreak);
     start.appendChild(document.createTextNode('챌린지 시작해볼까?'));
+
+  }, []);
 
   return (
     <div className="word">

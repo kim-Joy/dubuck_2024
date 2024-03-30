@@ -17,7 +17,8 @@ const Screen =(props) => {
         : <> 
           {Dubuck} 
           <p className="question-num">
-            <span className="desc">{props.desc}</span>
+            <span className="desc">{props.desc}
+            </span>
           </p> 
           </>
         }

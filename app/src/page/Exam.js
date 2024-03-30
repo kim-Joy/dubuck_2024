@@ -55,7 +55,8 @@ const Exam =(props) => {
       <div className="layer active">
         <Screen
           className={'start'}
-          desc={'a문항'}
+          desc={'오늘은'}
+          desc_two={'챌린지 시작해볼까'}
         >
           <Button
             onClick={layerClose}
