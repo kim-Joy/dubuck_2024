@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dubuck_2024/static/css/main.8886e65b.css",
-    "main.js": "/dubuck_2024/static/js/main.e8698be9.js",
+    "main.css": "/dubuck_2024/static/css/main.fcc87f31.css",
+    "main.js": "/dubuck_2024/static/js/main.fa6764f3.js",
     "static/media/KIMM_bold.woff2": "/dubuck_2024/static/media/KIMM_bold.ec59780b4493e25242c2.woff2",
     "static/media/KIMM_Light.ttf": "/dubuck_2024/static/media/KIMM_Light.ca86f545b13cffa9e2c8.ttf",
     "static/media/KIMM_bold.ttf": "/dubuck_2024/static/media/KIMM_bold.e2c9f2e4cb62ca27fea5.ttf",
@@ -45,11 +45,11 @@
     "static/media/plus.svg": "/dubuck_2024/static/media/plus.a030baf48ca60e792a3b.svg",
     "static/media/arrow_round.svg": "/dubuck_2024/static/media/arrow_round.fdf617e9d7328362c38f.svg",
     "static/media/checked_round.svg": "/dubuck_2024/static/media/checked_round.74108690ca8ed28247ef.svg",
-    "main.8886e65b.css.map": "/dubuck_2024/static/css/main.8886e65b.css.map",
-    "main.e8698be9.js.map": "/dubuck_2024/static/js/main.e8698be9.js.map"
+    "main.fcc87f31.css.map": "/dubuck_2024/static/css/main.fcc87f31.css.map",
+    "main.fa6764f3.js.map": "/dubuck_2024/static/js/main.fa6764f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.8886e65b.css",
-    "static/js/main.e8698be9.js"
+    "static/css/main.fcc87f31.css",
+    "static/js/main.fa6764f3.js"
   ]
 }
