@@ -56,7 +56,7 @@ function Main() {
           <div className="btn-group">
             <Link to="/Suggestion">
             <Button 
-                className={"btn border border-whtie radius-20 h-50"}
+                className={"btn border border-white radius-20 h-50" }
                 classSpan={"txt-white"}
                 text={"충고하기"}
             />

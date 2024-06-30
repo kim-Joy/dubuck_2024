@@ -1,6 +1,10 @@
 #wrapper {
   width: 100%;
   background-color: #f7f8f9;
+  .mockup {
+    max-width: 380px; 
+    margin: 0 auto;
+  }
   #root {
     height: 100vh;
     background-color: #fff;
@@ -220,11 +224,11 @@
 
 .word {
   .btn-group.horizontal {
-    position: absolute; 
-    bottom: 0; left: 0;
-    width: 100%; 
-    padding: 0 20px; 
-    box-sizing: border-box;
+    // position: absolute; 
+    // bottom: 0; left: 0;
+    // width: 100%; 
+    // padding: 0 20px; 
+    // box-sizing: border-box;
     &.horizontal {
       justify-content: space-between;
     }
@@ -253,7 +257,7 @@
   animation-fill-mode: forwards;
   & .start {
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     width: 100%;
   }
   & .disNone {
@@ -267,11 +271,11 @@
 
  @keyframes fadeIn{
   0% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     display: block;
   }
   100% {
-    transform: translateY(100%);
+    transform: translateX(-50%) translateY(100%);
     display: none;
   }
 }

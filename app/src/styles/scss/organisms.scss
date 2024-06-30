@@ -679,10 +679,11 @@
   margin-top: 26px;
   + .btn-group {
     position: fixed;
-    bottom: 20px; left: 0; 
+    bottom: 20px; left: 50%; 
+    max-width: 380px; 
     width: 100%; 
     justify-content: space-between;
-
+    transform: translateX(-50%);
   }
 }
 .antenna {
