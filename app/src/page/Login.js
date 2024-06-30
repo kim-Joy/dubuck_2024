@@ -92,7 +92,7 @@ function Login() {
                 placeholder={"@를 포함한 이메일을 입력하세요."}
                 required={true}
                 name={"email"}
-                value={email}
+                value={'admin@naver.com'}
                 onChange={valueChange}
               />
               <p 
@@ -114,7 +114,7 @@ function Login() {
                 type={"password"}
                 required={true}
                 name={"pw"}
-                value={pw}
+                value={'1234'}
                 onChange={valueChange}
               />
             </li>
